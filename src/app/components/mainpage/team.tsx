@@ -68,7 +68,11 @@ const Team: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold mb-6">
-            Meet Our <span className="text-primary-accent text-neon">Digital</span> Architects
+            Meet Our
+             <span className="block text-[#00E0FF] font-bold" style={{ textShadow: "0 0 20px #00E0FF" }}>
+                Digital
+                </span>
+              Architects
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
             AI-enhanced developers working 24/7 to bring your vision to life

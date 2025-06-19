@@ -37,7 +37,11 @@ const Contact: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold mb-6">
-            Ready to <span className="text-primary-accent text-neon">Transform</span> Your Idea?
+            Ready to 
+            <span className="block text-[#00E0FF] font-bold" style={{ textShadow: "0 0 20px #00E0FF" }}>
+              Transform
+              </span>
+             Your Idea?
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
             {"Let's build something extraordinary together. Our AI will analyze your project requirements instantly."}
