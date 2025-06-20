@@ -2,7 +2,7 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 interface TypewriterProps {
   text: string | string[];
@@ -41,31 +41,29 @@ const Typewriter: React.FC<TypewriterProps> = ({
     let timer: NodeJS.Timeout;
     
     if (!isDeleting && currentText !== currentFullText) {
-      // Escribiendo
+      // Escribiendo - carácter por carácter
       timer = setTimeout(() => {
         setCurrentText(currentFullText.substring(0, currentText.length + 1));
       }, speed);
     } else if (isDeleting && currentText !== "") {
-      // Borrando
+      // Borrando - todo de una vez
       timer = setTimeout(() => {
-        setCurrentText(currentFullText.substring(0, currentText.length - 1));
-      }, deleteSpeed);
-    } else if (!isDeleting && currentText === currentFullText) {
-      // Pausa después de escribir
-      timer = setTimeout(() => {
-        setIsDeleting(true);
-      }, delay);
-    } else if (isDeleting && currentText === "") {
-      // Pausa después de borrar y pasar al siguiente texto
-      timer = setTimeout(() => {
+        setCurrentText("");
         setIsDeleting(false);
+        
+        // Avanzar al siguiente texto después de borrar
         if (currentIndex + 1 >= texts.length && !loop) {
           setIsPaused(true);
           if (onComplete) onComplete();
         } else {
           setCurrentIndex((prev) => (prev + 1) % texts.length);
         }
-      }, delay / 2);
+      }, deleteSpeed);
+    } else if (!isDeleting && currentText === currentFullText) {
+      // Pausa después de escribir
+      timer = setTimeout(() => {
+        setIsDeleting(true);
+      }, delay);
     }
 
     return () => clearTimeout(timer);
@@ -73,17 +71,8 @@ const Typewriter: React.FC<TypewriterProps> = ({
 
   return (
     <div className={`inline-flex items-center ${className}`}>
-      <AnimatePresence mode="wait">
-        <motion.span
-          key={currentText}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.1 }}
-        >
-          {currentText}
-        </motion.span>
-      </AnimatePresence>
+      {/* Texto sin animaciones adicionales para evitar el flash */}
+      <span>{currentText}</span>
       
       {cursor && (
         <motion.span

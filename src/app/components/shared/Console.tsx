@@ -26,8 +26,59 @@ export const ConsoleComponent: React.FC<{ currentCode: string }> = ({ currentCod
     return;
   }
   console.log('Conectado a la base de datos.');
-})` , "Deconing some secrets...", "Finding some wifi..."]}
-                    speed={50}
+})` , `function TasaCambioUSD() {
+  const [valorDolar, setValorDolar] = useState(null);
+  const [cargando, setCargando] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const obtenerTasa = async () => {
+      try {
+        const respuesta = await axios.get('https://api.exchangerate.host/latest?base=USD&symbols=COP');
+        const tasa = respuesta.data.rates.COP;
+        setValorDolar(tasa);
+      } catch (err) {
+        setError('Error al obtener la tasa de cambio');
+      } finally {
+        setCargando(false);
+      }
+    };
+
+    obtenerTasa();
+  }, []);
+
+  if (cargando) return <p>Cargando tasa de cambio...</p>;
+  if (error) return <p>{error}</p>;
+
+  return (
+    <div>
+      <h2>Tasa de Cambio</h2>
+      <p>1 USD = {valorDolar} COP</p>
+    </div>
+  );
+}`, `FROM node:18 AS build
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+RUN npm run build
+
+FROM nginx:stable-alpine
+
+COPY --from=build /app/build /usr/share/nginx/html
+
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
+`]}
+                    speed={90}
                     deleteSpeed={80}
                     delay={1500}
                     cursorBlinkSpeed={1}

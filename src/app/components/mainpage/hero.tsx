@@ -4,6 +4,8 @@ import { ConsoleComponent } from "../shared/Console"
 import { Code, Zap } from "lucide-react"
 import { useState, useEffect } from "react"
 import ParticleSystem from "../effects/tech-stack"
+import CodeSnippet from "../shared/codeSnipet"
+import SimpleCodeSnippet from "../shared/codeSnipet"
 
 const Hero: React.FC = () => {
   const [currentCode, setCurrentCode] = useState(0)
@@ -29,35 +31,17 @@ const Hero: React.FC = () => {
                 className="block text-[#00E0FF] font-bold" 
                 style={{ textShadow: "0 0 20px #00E0FF" }}
               >
-                Finova
+                gammer site
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-text-secondary mb-8 leading-relaxed">
-              Transforming ideas into intelligent, scalable digital ecosystems
+            <p className="text-xl md:text-2xl text-text-secondary mb-8 leading-snug">
+             Soluciones de software a medida que transforman tu flujo de trabajo: 
+             desde bases de datos hasta hosting seguro. Diseñadas para ahorrarte tiempo, 
+             reducir complicaciones y potenciar tu crecimiento.
             </p>
             
-            <div className="mb-10 p-4 glass-card rounded-lg border border-primary-accent/30">
-              <div className="flex items-center">
-                <div className="bg-[#00E0FF]/20 p-2 rounded-lg mr-4">
-                  <Code className="w-6 h-6 text-[#00E0FF]" />
-                </div>
-                <div>
-                  <div className="font-mono text-primary-cyber">
-                    optimizePerformance((
-                  </div>
-                  <div className="font-mono text-primary-cyber ml-4">
-                    latency: "99.9%",
-                  </div>
-                  <div className="font-mono text-primary-cyber ml-4">
-                    uptime: "100%"
-                  </div>
-                  <div className="font-mono text-primary-cyber">
-                    ))
-                  </div>
-                </div>
-              </div>
-            </div>
+            <SimpleCodeSnippet/>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <button className="neon-btn group flex-1">

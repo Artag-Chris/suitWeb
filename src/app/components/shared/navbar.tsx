@@ -46,11 +46,11 @@ const Navbar: React.FC = () => {
   }, [])
 
   const navItems = [
-    { name: "Home", href: "#home", icon: Globe },
-    { name: "Services", href: "#services", icon: Zap },
+    { name: "Inicio", href: "#home", icon: Globe },
+    { name: "Servicios", href: "#services", icon: Zap },
     { name: "Tech Stack", href: "#tech", icon: Code },
-    { name: "Team", href: "#team", icon: Brain },
-    { name: "Contact", href: "#contact", icon: Shield },
+    { name: "Equipo", href: "#team", icon: Brain },
+    { name: "Contactanos", href: "#contact", icon: Shield },
   ]
 
   return (
