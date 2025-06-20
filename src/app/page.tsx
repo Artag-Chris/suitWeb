@@ -1,22 +1,30 @@
+import About from "@/components/mainpage/About"
+import CTA from "@/components/mainpage/CTA"
+import Hero from "@/components/mainpage/Hero"
+import Services from "@/components/mainpage/Services"
+import Footer from "@/components/shared/Footer"
+import Navbar from "@/components/shared/Navbar"
 
-import TechStack from "./components/effects/tech-stack";
-import Contact from "./components/mainpage/contact";
-import Hero from "./components/mainpage/hero";
-import Services from "./components/mainpage/services";
-import Team from "./components/mainpage/team";
-import Footer from "./components/shared/footer";
-import Navbar from "./components/shared/navbar";
-
-export default function App() {
+export default function Component() {
   return (
-    <div className="min-h-screen bg-primary-dark text-text-primary">
-      <Navbar />
+    <div className="min-h-screen bg-white text-black">
+      {/* Header */}
+      <Navbar/>
+
+      {/* Hero Section */}
       <Hero />
-      <TechStack />
-      <Services />
-      <Team />
-      <Contact/>
-      <Footer />
+
+      {/* Services Section */}
+      <Services/>
+
+      {/* About Section */}
+      <About />
+
+      {/* CTA Section */}
+      <CTA />
+
+      {/* Footer */}
+      <Footer/>
     </div>
   )
 }
