@@ -14,11 +14,13 @@ export const DropdownMenu = (props: MenuItemProps) => {
     animationDuration,
     closeTimerRef,
     isMobile,
-    customContent, // Nueva prop para contenido personalizado
-    icon, // Nueva prop para icono personalizado
-    stats, // Nueva prop para estadísticas
-    featuredItems, // Nueva prop para ítems destacados
-    columns // Nueva prop para diseño en columnas
+    customContent,
+    icon,
+    stats,
+    featuredItems,
+    columns,
+    compact,
+    dropDirection = 'down' // Nueva prop para controlar la dirección
   } = props;
   
   const localTimerRef = useRef<NodeJS.Timeout | null>(null);
@@ -65,6 +67,32 @@ export const DropdownMenu = (props: MenuItemProps) => {
     }
   };
 
+  // Clases para la posición del dropdown basadas en la dirección
+  const getDropdownPositionClasses = () => {
+    const baseClasses = "absolute left-0 min-w-[500px] bg-[#1E1E24] border border-gray-700 shadow-2xl z-50 overflow-hidden rounded-xl";
+    
+    if (dropDirection === 'up') {
+      return `${baseClasses} bottom-full mb-2`;
+    } else {
+      return `${baseClasses} top-full mt-2`;
+    }
+  };
+
+  // Clases para la animación basadas en la dirección
+  const getAnimationClasses = () => {
+    const baseTransition = menuTransition;
+    
+    if (dropDirection === 'up') {
+      return `${baseTransition} origin-bottom ${activeMenu === menuKey 
+        ? "scale-y-100 opacity-100" 
+        : "scale-y-0 opacity-0"}`;
+    } else {
+      return `${baseTransition} origin-top ${activeMenu === menuKey 
+        ? "scale-y-100 opacity-100" 
+        : "scale-y-0 opacity-0"}`;
+    }
+  };
+
   // Renderizar contenido personalizado si está definido
   if (customContent) {
     return (
@@ -75,7 +103,9 @@ export const DropdownMenu = (props: MenuItemProps) => {
         onMouseLeave={handleMouseLeave}
       >
         <button 
-          className="flex items-center cursor-pointer text-gray-400 hover:text-white transition-all duration-300 font-medium tracking-wide w-full"
+          className={`flex items-center cursor-pointer text-gray-400 hover:text-white transition-all duration-300 font-medium tracking-wide w-full ${
+            compact ? 'text-xs' : ''
+          }`}
           onClick={handleClick}
           aria-expanded={activeMenu === menuKey}
         >
@@ -87,11 +117,7 @@ export const DropdownMenu = (props: MenuItemProps) => {
         </button>
         
         <div 
-          className={`absolute top-full left-0 mt-2 min-w-[500px] bg-[#1E1E24] border border-gray-700 shadow-2xl z-50 overflow-hidden rounded-xl
-              ${menuTransition} 
-              ${activeMenu === menuKey 
-                  ? "scale-y-100 opacity-100" 
-                  : "scale-y-0 opacity-0"}`}
+          className={`${getDropdownPositionClasses()} ${getAnimationClasses()}`}
           onMouseEnter={() => {
             if (closeTimerRef.current) {
               clearTimeout(closeTimerRef.current);
@@ -120,7 +146,9 @@ export const DropdownMenu = (props: MenuItemProps) => {
       onMouseLeave={handleMouseLeave}
     >
       <button 
-        className="flex items-center cursor-pointer text-gray-400 hover:text-white transition-all duration-300 font-medium tracking-wide w-full"
+        className={`flex items-center cursor-pointer text-gray-400 hover:text-white transition-all duration-300 font-medium tracking-wide w-full ${
+          compact ? 'text-xs' : ''
+        }`}
         onClick={handleClick}
         aria-expanded={activeMenu === menuKey}
       >
@@ -132,16 +160,12 @@ export const DropdownMenu = (props: MenuItemProps) => {
       </button>
       
       <div 
-        className={`absolute top-full left-0 mt-2 min-w-[500px] bg-[#1E1E24] border border-gray-700 shadow-2xl z-50 overflow-hidden rounded-xl
-            ${menuTransition} 
-            ${activeMenu === menuKey 
-                ? "scale-y-100 opacity-100" 
-                : "scale-y-0 opacity-0"}`}
+        className={`${getDropdownPositionClasses()} ${getAnimationClasses()}`}
         onMouseEnter={() => closeTimerRef.current && clearTimeout(closeTimerRef.current)}
         onMouseLeave={() => !isMobile && (closeTimerRef.current = setTimeout(() => setActiveMenu(null), 200))}
       >
-        <div className="p-6">
-          {title && <h3 className="text-white text-xl font-bold mb-4">{title}</h3>}
+        <div className={`${compact ? 'p-3' : 'p-6'}`}>
+          {title && <h3 className={`text-white font-bold mb-4 ${compact ? 'text-lg' : 'text-xl'}`}>{title}</h3>}
           
           {stats && (
             <div className="grid grid-cols-4 gap-4 mb-6">

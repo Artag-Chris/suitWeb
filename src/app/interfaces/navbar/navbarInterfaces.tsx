@@ -51,6 +51,8 @@ export interface MenuItemProps {
   stats?: MenuStats[];
   featuredItems?: FeaturedItem[];
   columns?: number;
+  compact?: boolean,
+  dropDirection?: 'up' | 'down';
 }
 
 // Función type guard para detectar columnas

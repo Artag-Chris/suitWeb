@@ -3,8 +3,6 @@ import { codeSnippets } from "@/references"
 import { ConsoleComponent } from "../shared/Console"
 import { Code, Zap } from "lucide-react"
 import { useState, useEffect } from "react"
-import ParticleSystem from "../effects/tech-stack"
-import CodeSnippet from "../shared/codeSnipet"
 import SimpleCodeSnippet from "../shared/codeSnipet"
 
 const Hero: React.FC = () => {
