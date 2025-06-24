@@ -2,6 +2,7 @@
 import { ArrowRight } from 'lucide-react'
 import React, { useRef, useEffect } from 'react'
 import { Button } from '../ui/button'
+import { Connection, Particle } from '@/app/interfaces';
 
 function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -183,15 +184,15 @@ function Hero() {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button className="group bg-gradient-to-r from-[#d4af37] to-[#b8860b] text-black font-bold px-10 py-6 text-lg hover:opacity-90 hover:translate-y-[-2px] transition-all duration-300 shadow-lg shadow-[#d4af3780] relative overflow-hidden">
+            <Button className="rounded group bg-gradient-to-r from-[#d4af37] to-[#b8860b] text-black font-bold px-10 py-6 text-lg hover:opacity-90 hover:translate-y-[-2px] transition-all duration-300 shadow-lg shadow-[#d4af3780] relative overflow-hidden">
               <span className="relative z-10">Iniciar Proyecto</span>
               <div className="absolute inset-0 bg-gradient-to-r from-[#f1c232] to-[#d4af37] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <ArrowRight className="w-5 h-5 ml-4 relative z-10 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="w-5 h-5 ml-4 relative z-10 transition-transform group-hover:translate-x-1 text-white" />
             </Button>
             
             <Button
               variant="outline"
-              className="border-2 border-[#d4af37] text-[#d4af37] hover:text-white hover:bg-[#d4af3710] px-10 py-6 text-lg transition-all duration-300 shadow-sm group relative overflow-hidden"
+              className="border-2 rounded border-[#d4af37] text-[#d4af37] hover:text-white hover:bg-[#d4af3710] px-10 py-6 text-lg transition-all duration-300 shadow-sm group relative overflow-hidden"
             >
               <span className="relative z-10">Ver Servicios</span>
               <div className="absolute inset-0 bg-[#d4af37] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
@@ -201,23 +202,6 @@ function Hero() {
       </div>
     </section>
   )
-}
-
-// Definición de tipos para las partículas y conexiones
-interface Particle {
-  x: number;
-  y: number;
-  size: number;
-  speedX: number;
-  speedY: number;
-  color: string;
-  glow: boolean;
-}
-
-interface Connection {
-  p1: Particle;
-  p2: Particle;
-  distance: number;
 }
 
 export default Hero;

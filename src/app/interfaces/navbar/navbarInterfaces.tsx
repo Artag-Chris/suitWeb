@@ -80,3 +80,21 @@ export type BottomNavbarProps = {
   closeTimerRef: React.MutableRefObject<NodeJS.Timeout | null>;
   isMobile: boolean;
 };
+
+export interface Particle {
+    x: number;
+    y: number;
+    size: number;
+    speedX: number;
+    speedY: number;
+    color: string;
+    glow: boolean;
+  
+}
+
+
+export interface Connection {
+    p1: Particle;
+    p2: Particle;
+    distance: number;
+}

@@ -153,22 +153,21 @@ function Navbar() {
                         <div className="flex items-center space-x-4">
                             <Button
                                 variant="outline"
-                                className="border border-gray-600 text-[#0F0F13] font-medium px-6 py-2 hover:bg-[#1E1E24] hover:text-white transition-all duration-300"
+                                className="border rounded border-gray-600 text-[#0F0F13] font-medium px-6 py-2 hover:bg-[#1E1E24] hover:text-white transition-all duration-300"
                             >
                                 Contáctanos
                             </Button>
                             <Button
                                 className="
-                                    bg-gradient-to-r from-[#d4af37] to-[#d4af37]
-                                    font-medium px-6 py-3 rounded-[10px] tracking-wide
-                                    transition-all duration-300 text-dark
-                                    hover:from-[#d4af37] hover:via-[#c0c0c0] hover:to-[#7C3AED] 
-                                    hover:translate-y-[-2px] hover:shadow-lg
-                                    focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50
-                                    active:translate-y-0
-                                "
+                                    bg-gradient-to-r from-[#d4af37] to-[#b8860b] text-black
+                                    font-bold px-4 py-2 rounded text-xs
+                                    hover:opacity-90 hover:translate-y-[-2px] 
+                                    transition-all duration-300 shadow-lg shadow-[#d4af3780]
+                                    relative overflow-hidden group
+                                  "
                             >
-                                Agenda una cita
+                                <span className="relative z-10">Agenda una cita</span>
+                                <div className="absolute inset-0 bg-gradient-to-r from-[#f1c232] to-[#d4af37] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </Button>
                         </div>
                     </div>

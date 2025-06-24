@@ -140,7 +140,7 @@ export const DropdownMenu = (props: MenuItemProps) => {
 
   return (
     <div 
-      className="relative"
+      className="relative rounded"
       ref={menuRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
