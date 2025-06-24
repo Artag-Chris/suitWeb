@@ -59,3 +59,24 @@ export interface MenuItemProps {
 export function isMenuColumn(item: MenuItem): item is MenuColumn {
   return (item as MenuColumn).items !== undefined;
 }
+
+export type NavLinksProps = {
+  activeMenu: any;
+  setActiveMenu: any;
+  menuRefs: any;
+  menuTransition: any;
+  animationDuration: number;
+  closeTimerRef: any;
+  isMobile: boolean;
+};
+
+export type BottomNavbarProps = {
+  bottomNavRef: any;
+  activeMenu: any;
+  setActiveMenu: any;
+  bottomMenuRefs:any;
+  menuTransition: string;
+  animationDuration: number;
+  closeTimerRef: React.MutableRefObject<NodeJS.Timeout | null>;
+  isMobile: boolean;
+};
