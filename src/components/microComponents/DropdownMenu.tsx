@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useRef, ReactNode } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { isMenuColumn, MenuItemProps } from '@/app/interfaces';
 
 export const DropdownMenu = (props: MenuItemProps) => {
@@ -20,7 +20,7 @@ export const DropdownMenu = (props: MenuItemProps) => {
     featuredItems,
     columns,
     compact,
-    dropDirection = 'down' // Nueva prop para controlar la dirección
+    dropDirection = 'down' 
   } = props;
   
   const localTimerRef = useRef<NodeJS.Timeout | null>(null);

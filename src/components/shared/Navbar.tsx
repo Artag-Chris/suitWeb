@@ -159,10 +159,10 @@ function Navbar() {
                             </Button>
                             <Button
                                 className="
-                                    bg-gradient-to-r from-[#7C3AED] to-[#6D28D9] text-white 
+                                    bg-gradient-to-r from-[#d4af37] to-[#d4af37]
                                     font-medium px-6 py-3 rounded-[10px] tracking-wide
-                                    transition-all duration-300
-                                    hover:from-[#8B5CF6] hover:to-[#7C3AED] 
+                                    transition-all duration-300 text-dark
+                                    hover:from-[#d4af37] hover:via-[#c0c0c0] hover:to-[#7C3AED] 
                                     hover:translate-y-[-2px] hover:shadow-lg
                                     focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50
                                     active:translate-y-0
