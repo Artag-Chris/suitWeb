@@ -11,7 +11,6 @@ export const DropdownMenu = (props: MenuItemProps) => {
     setActiveMenu, 
     menuRef,
     menuTransition,
-    animationDuration,
     closeTimerRef,
     isMobile,
     customContent,

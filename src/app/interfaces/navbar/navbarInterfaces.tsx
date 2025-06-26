@@ -1,6 +1,6 @@
 import { RefObject, Dispatch, SetStateAction, ReactNode } from 'react';
 
-export type MenuKey = 'products' | 'solutions' | 'resources' | null;
+export type MenuKey = 'Productos' | 'Soluciones' | 'Recursos' | null;
 export type MenuRefs = {
   [key in Exclude<MenuKey, null>]: RefObject<HTMLDivElement | null>;
 };

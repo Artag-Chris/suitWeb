@@ -1,8 +1,13 @@
 import React from 'react'
 import Link from 'next/link';
-import { UserIcon, LinkIcon, CogIcon, ChartPieIcon, ClockIcon } from 'lucide-react';
+import {
+    LinkIcon, ChartBarIcon, TrendingUpIcon, ServerIcon, UserCircleIcon,
+    BarChart2, Cloud, MoveDiagonal, RefreshCw, Cpu, PieChart, BookOpen, DownloadCloud, FileText, LibraryBig, Video
+} from 'lucide-react';
 import { DropdownMenu } from './DropdownMenu';
 import { NavLinksProps } from '@/app/interfaces';
+import { RocketLaunchIcon } from '@heroicons/react/16/solid';
+
 
 
 function NavLinks({
@@ -17,85 +22,62 @@ function NavLinks({
     return (
         <nav className="hidden md:flex items-center space-x-10">
             <DropdownMenu
-                menuKey="products"
-                title="Effect of Mobile Suite (EMS)"
+                menuKey="Productos"
+                title="EMS - ROI para Desarrollo"
                 stats={[
-                    { value: "3.2%", label: "Growth" },
-                    { value: "1.2", label: "Index" },
-                    { value: "5.4%", label: "Engagement" },
-                    { value: "6.3%", label: "Conversion" }
+                    { value: "32%", label: "Velocidad Entrega" },
+                    { value: "1.2x", label: "Productividad Dev" },
+                    { value: "5.4%", label: "Satisfacción Clientes" },
+                    { value: "6.3%", label: "Ahorro Costos" }
                 ]}
                 items={[
                     {
-                        title: "Features",
+                        title: "Funcionalidades",
                         items: [
                             {
-                                label: "Real-Time Service Management",
-                                icon: <UserIcon className="w-5 h-5 text-blue-400" />,
-                                description: "Monitor and manage services in real-time"
+                                label: "Gestión en Tiempo Real",
+                                icon: <RocketLaunchIcon className="w-5 h-5 text-blue-500" />,
+                                description: "Control y monitoreo de servicios en tiempo real"
                             },
                             {
-                                label: "Third-Party Integration",
-                                icon: <LinkIcon className="w-5 h-5 text-green-400" />,
-                                description: "Seamless integration with external systems"
+                                label: "Integraciones API",
+                                icon: <LinkIcon className="w-5 h-5 text-green-500" />,
+                                description: "Conexión con sistemas externos"
                             },
                         ]
                     },
                     {
-                        title: "Management",
+                        title: "Gestión",
                         items: [
                             {
-                                label: "Customer Management",
-                                icon: <UserIcon className="w-5 h-5 text-yellow-400" />,
-                                description: "Centralized customer data management"
+                                label: "Clientes",
+                                icon: <UserCircleIcon className="w-5 h-5 text-amber-500" />,
+                                description: "Centralización de datos de usuarios"
                             },
                             {
-                                label: "Product & Resource Management",
-                                icon: <CogIcon className="w-5 h-5 text-red-400" />,
-                                description: "Efficient resource allocation"
+                                label: "Recursos",
+                                icon: <ServerIcon className="w-5 h-5 text-red-500" />,
+                                description: "Optimización de infraestructura"
                             },
                         ]
                     },
                     {
-                        title: "Analytics",
+                        title: "Analíticas",
                         items: [
                             {
-                                label: "Customers",
-                                icon: <UserIcon className="w-5 h-5 text-pink-400" />,
-                                description: "Customer behavior insights"
+                                label: "Rendimiento",
+                                icon: <ChartBarIcon className="w-5 h-5 text-purple-500" />,
+                                description: "Métricas de eficiencia del sistema"
                             },
                             {
-                                label: "Network",
-                                icon: <UserIcon className="w-5 h-5 text-indigo-400" />,
-                                description: "Network performance analytics"
-                            },
-                            {
-                                label: "Total Users",
-                                icon: <ChartPieIcon className="w-5 h-5 text-teal-400" />,
-                                description: "User growth metrics"
+                                label: "Uso",
+                                icon: <TrendingUpIcon className="w-5 h-5 text-teal-500" />,
+                                description: "Tendencias de adopción de usuarios"
                             },
                         ]
-                    },
-                    {
-                        label: "Red-Time Service Management",
-                        href: "/services",
-                        icon: <ClockIcon className="w-5 h-5 text-orange-400" />,
-                        description: "Advanced service monitoring tools"
                     }
                 ]}
                 columns={3}
-                featuredItems={[
-                    {
-                        category: "BLOG",
-                        title: "Revolutionizing Telecom with Next-Gen Solutions",
-                        href: "/blog/telecom-revolution"
-                    },
-                    {
-                        category: "BLOG",
-                        title: "Accelerating 5G Rollouts with AI",
-                        href: "/blog/5g-ai"
-                    }
-                ]}
                 activeMenu={activeMenu}
                 setActiveMenu={setActiveMenu}
                 menuRef={menuRefs.products}
@@ -106,41 +88,66 @@ function NavLinks({
                 dropDirection="down"
             />
             <DropdownMenu
-                menuKey="solutions"
-                title="Our solutions"
+                menuKey="Soluciones"
+                title="Soluciones Técnicas"
                 items={[
                     {
-                        title: "Features",
+                        title: "Infraestructura",
                         items: [
                             {
-                                label: "Transformación Digital",
-                                icon: <UserIcon className="w-5 h-5 text-blue-400" />,
-                                description: "Monitor and manage services in real-time"
+                                label: "Cloud Híbrida",
+                                icon: <Cloud className="w-5 h-5 text-purple-500" />,
+                                description: "Implementación multi-nube con alta disponibilidad"
                             },
                             {
-                                label: "Infraestructura Cloud",
-                                icon: <LinkIcon className="w-5 h-5 text-green-400" />,
-                                description: "Seamless integration with external systems"
-                            },
-                            {
-                                label: "Optimización de Procesos",
-                                icon: <LinkIcon className="w-5 h-5 text-green-400" />,
-                                description: "Seamless integration with external systems"
+                                label: "DevOps & CI/CD",
+                                icon: <MoveDiagonal className="w-5 h-5 text-yellow-500" />,
+                                description: "Automatización de despliegues y pipelines"
                             },
                         ]
                     },
-                ]}
-                columns={3}
-                featuredItems={[
                     {
-                        category: "BLOG",
-                        title: "Revolutionizing Telecom with Next-Gen Solutions",
-                        href: "/blog/telecom-revolution"
+                        title: "Modernización",
+                        items: [
+                            {
+                                label: "Migración Legacy",
+                                icon: <RefreshCw className="w-5 h-5 text-red-500" />,
+                                description: "Actualización de sistemas heredados"
+                            },
+                            {
+                                label: "Optimización SaaS",
+                                icon: <BarChart2 className="w-5 h-5 text-teal-500" />,
+                                description: "Mejora de rendimiento en aplicaciones cloud"
+                            },
+                        ]
                     },
                     {
-                        category: "BLOG",
-                        title: "Accelerating 5G Rollouts with AI",
-                        href: "/blog/5g-ai"
+                        title: "Inteligencia",
+                        items: [
+                            {
+                                label: "Análisis de Datos",
+                                icon: <PieChart className="w-5 h-5 text-indigo-500" />,
+                                description: "Plataformas de business intelligence"
+                            },
+                            {
+                                label: "Machine Learning",
+                                icon: <Cpu className="w-5 h-5 text-pink-500" />,
+                                description: "Modelos predictivos para toma de decisiones"
+                            },
+                        ]
+                    }
+                ]}
+                columns={4}
+                featuredItems={[
+                    {
+                        category: "CASO DE ESTUDIO",
+                        title: "Migración exitosa a microservicios para empresa de telecomunicaciones",
+                        href: "/casos/telecom-microservicios"
+                    },
+                    {
+                        category: "WEBINAR",
+                        title: "Mejores prácticas en implementación de CI/CD",
+                        href: "/webinars/cicd-best-practices"
                     }
                 ]}
                 activeMenu={activeMenu}
@@ -153,12 +160,67 @@ function NavLinks({
                 dropDirection="down"
             />
             <DropdownMenu
-                menuKey="resources"
+                menuKey="Recursos"
                 title="Recursos Expertos"
                 items={[
-                    { label: "Whitepapers" },
-                    { label: "Casos de Estudio" },
-                    { label: "Webinars" }
+                    {
+                        title: "Materiales Técnicos",
+                        items: [
+                            {
+                                label: "Whitepapers",
+                                icon: <FileText className="w-5 h-5 text-blue-500" />,
+                                description: "Documentos técnicos profundos"
+                            },
+                            {
+                                label: "Casos de Estudio",
+                                icon: <BarChart2 className="w-5 h-5 text-green-500" />,
+                                description: "Implementaciones exitosas"
+                            },
+                            {
+                                label: "Webinars",
+                                icon: <Video className="w-5 h-5 text-purple-500" />,
+                                description: "Sesiones técnicas en vivo"
+                            }
+                        ]
+                    },
+                    {
+                        title: "Herramientas",
+                        items: [
+                            {
+                                label: "Guías Prácticas",
+                                icon: <BookOpen className="w-5 h-5 text-yellow-500" />,
+                                description: "Tutoriales paso a paso"
+                            },
+                            {
+                                label: "Plantillas",
+                                icon: <DownloadCloud className="w-5 h-5 text-teal-500" />,
+                                description: "Recursos descargables"
+                            }
+                        ]
+                    },
+                    {
+                        title: "Biblioteca",
+                        items: [
+                            {
+                                label: "Centro de Aprendizaje",
+                                icon: <LibraryBig className="w-5 h-5 text-indigo-500" />,
+                                description: "Recursos educativos completos"
+                            }
+                        ]
+                    }
+                ]}
+                columns={3}
+                featuredItems={[
+                    {
+                        category: "NUEVO",
+                        title: "Guía de Arquitectura Cloud 2024",
+                        href: "/recursos/guia-cloud-2024"
+                    },
+                    {
+                        category: "POPULAR",
+                        title: "Webinar: DevOps en Entornos Empresariales",
+                        href: "/recursos/webinar-devops"
+                    }
                 ]}
                 activeMenu={activeMenu}
                 setActiveMenu={setActiveMenu}
@@ -173,7 +235,7 @@ function NavLinks({
                 href="#services"
                 className="text-gray-400 hover:text-white transition-colors duration-300 font-medium tracking-wide"
             >
-                SERVICES
+                SERVICIOS
             </Link>
         </nav>
     )

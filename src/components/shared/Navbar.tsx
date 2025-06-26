@@ -17,16 +17,16 @@ function Navbar() {
 
     // Referencias con tipado compatible con null
     const menuRefs: MenuRefs = {
-        products: useRef<HTMLDivElement>(null),
-        solutions: useRef<HTMLDivElement>(null),
-        resources: useRef<HTMLDivElement>(null)
+        Productos: useRef<HTMLDivElement>(null),
+        Soluciones: useRef<HTMLDivElement>(null),
+        Recursos: useRef<HTMLDivElement>(null)
     };
 
     // Referencias separadas para el navbar inferior
     const bottomMenuRefs: MenuRefs = {
-        products: useRef<HTMLDivElement>(null),
-        solutions: useRef<HTMLDivElement>(null),
-        resources: useRef<HTMLDivElement>(null)
+        Productos: useRef<HTMLDivElement>(null),
+        Soluciones: useRef<HTMLDivElement>(null),
+        Recursos: useRef<HTMLDivElement>(null)
     };
 
     useEffect(() => {
