@@ -114,7 +114,7 @@ export const DropdownMenu = (props: MenuItemProps) => {
           <span className="ml-1 transform transition-transform duration-300">
             {activeMenu === menuKey ? '✕' : '+'}
           </span>
-        </button>
+        </button> 
         
         <div 
           className={`${getDropdownPositionClasses()} ${getAnimationClasses()}`}
