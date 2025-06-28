@@ -139,10 +139,12 @@ function Hero() {
   }, []);
   
   return (
+    <>
+    
     <section ref={heroRef} className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black">
       {/* Punto de referencia PARA EL NAVBAR */}
       <div className="absolute top-0 h-[50vh] w-full pointer-events-none z-30" />
-      
+     
       {/* Canvas para el fondo animado estilo James Bond */}
       <canvas 
         ref={canvasRef} 
@@ -202,9 +204,11 @@ function Hero() {
         </div>
       </div>
       <Suspense fallback={<div className="absolute inset-0 flex items-center justify-center z-10"><span className="text-white">Cargando video...</span></div>}>
-      <InteractiveVideoManager />
+      <InteractiveVideoManager  position='middle-right'/>
       </Suspense>
     </section>
+    
+    </>
   )
 }
 
