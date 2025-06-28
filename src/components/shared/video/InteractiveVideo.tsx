@@ -1,9 +1,10 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import styles from './InteractiveVideo.module.css';
+import { Position } from './InteractiveVideoManager';
 
 // Definición de tipos
 // Tipos para posición (debe coincidir con InteractiveVideoManager)
-type Position = 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' | 'middle-right' | 'middle-left' | 'custom';
+
 
 interface InteractiveVideoProps {
     src: string;

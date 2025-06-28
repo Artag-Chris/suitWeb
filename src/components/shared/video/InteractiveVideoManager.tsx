@@ -10,8 +10,9 @@ interface VideoOption {
 }
 
 // Tipos para posición
-type Position = 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left'| 'middle-right'
-  | 'middle-left' | 'custom';
+export type Position = 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left'| 'middle-right'
+  | 'middle-left' | 'top-middle'
+  | 'bottom-middle' | 'custom';
 
 interface InteractiveVideoManagerProps {
   position?: Position;
@@ -74,6 +75,20 @@ const InteractiveVideoManager = ({
         top: '50%',
         left: '20px',
         transform: 'translateY(-50%)'
+      };
+      case 'top-middle':
+      return {
+        ...baseStyles,
+        top: '10%',
+        left: '50%',
+        transform: 'translateX(-50%)'
+      };
+    case 'bottom-middle':
+      return {
+        ...baseStyles,
+        bottom: '10%',
+        left: '50%',
+        transform: 'translateX(-50%)'
       };
       case 'custom':
         return {
