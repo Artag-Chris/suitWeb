@@ -24,10 +24,20 @@ const InteractiveVideoManager = ({
   customPosition = {}
 }: InteractiveVideoManagerProps) => {
   const [zIndex, setZIndex] = useState(100);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const requestElevation = useCallback(() => {
     setZIndex(prev => prev + 1);
   }, []);
+
+  const toggleExpand = useCallback(() => {
+    setIsAnimating(true);
+    setIsExpanded(!isExpanded);
+    
+    // Reset animating state after transition
+    setTimeout(() => setIsAnimating(false), 300);
+  }, [isExpanded]);
 
   // Datos de ejemplo
   const mainVideo = 'https://www.youtube.com/watch?v=r3DdVXZ06Ho';
@@ -49,8 +59,8 @@ const InteractiveVideoManager = ({
     const baseStyles = {
       position: 'fixed',
       zIndex: zIndex,
-      width: '200px',
-      height: '150px'
+      transition: 'all 0.3s ease',
+      overflow: 'hidden'
     } as React.CSSProperties;
 
     switch (position) {
@@ -64,32 +74,32 @@ const InteractiveVideoManager = ({
         return { ...baseStyles, bottom: '20px', left: '20px' };
       case 'middle-right':
         return {
-        ...baseStyles,
-        top: '50%',
-        right: '20px',
-        transform: 'translateY(-50%)'
-      };
-    case 'middle-left':
-      return {
-        ...baseStyles,
-        top: '50%',
-        left: '20px',
-        transform: 'translateY(-50%)'
-      };
+          ...baseStyles,
+          top: '50%',
+          right: '20px',
+          transform: 'translateY(-50%)'
+        };
+      case 'middle-left':
+        return {
+          ...baseStyles,
+          top: '50%',
+          left: '20px',
+          transform: 'translateY(-50%)'
+        };
       case 'top-middle':
-      return {
-        ...baseStyles,
-        top: '10%',
-        left: '50%',
-        transform: 'translateX(-50%)'
-      };
-    case 'bottom-middle':
-      return {
-        ...baseStyles,
-        bottom: '10%',
-        left: '50%',
-        transform: 'translateX(-50%)'
-      };
+        return {
+          ...baseStyles,
+          top: '10%',
+          left: '50%',
+          transform: 'translateX(-50%)'
+        };
+      case 'bottom-middle':
+        return {
+          ...baseStyles,
+          bottom: '10%',
+          left: '50%',
+          transform: 'translateX(-50%)'
+        };
       case 'custom':
         return {
           ...baseStyles,
@@ -103,16 +113,42 @@ const InteractiveVideoManager = ({
     }
   };
 
+ const containerStyles = {
+  ...getPositionStyles(),
+  width: isExpanded ? '200px' : '60px',
+  height: isExpanded ? '150px' : '60px',
+  borderRadius: isExpanded ? '8px' : '50%',
+  boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+  background: isExpanded ? '#000' : 'rgba(30, 30, 30, 0.85)',
+  transformOrigin: position.includes('right') ? 'top right' : 
+                  position.includes('left') ? 'top left' : 'center'
+};
+
   return (
-    <div style={getPositionStyles()}>
-      <InteractiveVideo
-        src={mainVideo}
-        videoOptions={videoOptions}
-        zIndex={zIndex}
-        requestElevation={requestElevation}
-        position={position}
-      //  customPosition={customPosition}
-      />
+    <div 
+      style={containerStyles}
+      className={isAnimating ? 'transition-all duration-300' : ''}
+    >
+      {isExpanded ? (
+        <InteractiveVideo
+          src={mainVideo}
+          videoOptions={videoOptions}
+          zIndex={zIndex}
+          requestElevation={requestElevation}
+          position={position}
+          onClose={toggleExpand}
+        />
+      ) : (
+        <button
+          onClick={toggleExpand}
+          className="w-full h-full flex items-center justify-center"
+          aria-label="Abrir reproductor de video"
+        >
+          <div className="text-white text-2xl transform transition-transform hover:scale-110">
+            ▶
+          </div>
+        </button>
+      )}
     </div>
   );
 };

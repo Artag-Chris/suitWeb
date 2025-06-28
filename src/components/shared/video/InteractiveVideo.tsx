@@ -2,9 +2,6 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 import styles from './InteractiveVideo.module.css';
 import { Position } from './InteractiveVideoManager';
 
-// Definición de tipos
-// Tipos para posición (debe coincidir con InteractiveVideoManager)
-
 
 interface InteractiveVideoProps {
     src: string;
@@ -13,6 +10,7 @@ interface InteractiveVideoProps {
     requestElevation: () => void;
     position?: Position;
     customPosition?: { top?: string; right?: string; bottom?: string; left?: string };
+    onClose: () => void;
 }
 interface VideoOption {
     src: string;
@@ -249,12 +247,11 @@ const InteractiveVideo = ({
     }, [position]);
 
     // Estilos dinámicos
-    const containerClasses = `
-    ${styles.container}
-    ${isHovered ? styles.hovered : ''}
-    ${isDocked ? styles.docked : ''}
-    ${isMenuOpen ? styles.menuOpen : ''}
-  `;
+   const containerClasses = `
+  ${styles.container}
+  ${isDocked ? styles.docked : ''}
+  ${isMenuOpen ? styles.menuOpen : ''}
+`;
 
     const containerStyle: React.CSSProperties = {
         transform: isDocked
@@ -288,6 +285,14 @@ const InteractiveVideo = ({
 
             <div className={styles.controls}>
                 <button
+                    onClick={toggleMenu}
+                    className={styles.controlButton}
+                    aria-expanded={isMenuOpen}
+                    aria-label="Mostrar opciones de video"
+                >
+                    {isMenuOpen ? '▲' : '▼'}
+                </button>
+                <button
                     onClick={toggleDock}
                     className={styles.controlButton}
                     aria-label={isDocked ? "Desanclar video" : "Anclar video"}
@@ -295,6 +300,7 @@ const InteractiveVideo = ({
                     {isDocked ? '✕' : '📌'}
                 </button>
 
+                
                 <button
                     onClick={toggleMenu}
                     className={styles.controlButton}
