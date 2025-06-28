@@ -1,0 +1,142 @@
+
+.container {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  z-index: 10;
+  background: #000;
+}
+
+.hovered {
+  width: 300px;
+  height: 225px;
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.docked {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 188px;
+  z-index: 1000;
+}
+
+.menuOpen {
+  height: auto;
+  max-height: 80vh;
+  overflow: visible;
+}
+
+.videoWrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.videoPlayer {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.container:hover .controls,
+.docked .controls,
+.menuOpen .controls {
+  opacity: 1;
+}
+
+.controlButton {
+  background: rgba(0,0,0,0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.controlButton:hover {
+  background: rgba(30,30,30,0.9);
+  transform: scale(1.1);
+}
+
+.videoMenu {
+  background: rgba(15,15,15,0.95);
+  color: white;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  border-top: 1px solid #333;
+  padding: 10px 0;
+  animation: slideDown 0.3s ease forwards;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  gap: 10px;
+}
+
+.menuItem:hover {
+  background: rgba(50,50,50,0.7);
+}
+
+.thumbnail {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    width: 180px;
+    height: 135px;
+  }
+  
+  .hovered {
+    width: 250px;
+    height: 188px;
+  }
+  
+  .docked {
+    width: 220px;
+    height: 165px;
+  }
+}

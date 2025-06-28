@@ -1,8 +1,9 @@
 'use client'
 import { ArrowRight } from 'lucide-react'
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, Suspense } from 'react'
 import { Button } from '../ui/button'
 import { Connection, Particle } from '@/app/interfaces';
+import InteractiveVideoManager from '../shared/video/InteractiveVideoManager';
 
 function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -200,6 +201,9 @@ function Hero() {
           </div>
         </div>
       </div>
+      <Suspense fallback={<div className="absolute inset-0 flex items-center justify-center z-10"><span className="text-white">Cargando video...</span></div>}>
+      <InteractiveVideoManager />
+      </Suspense>
     </section>
   )
 }
