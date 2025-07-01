@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef, useEffect, useCallback } from "react"
-import type { InteractiveVideoProps, Coordinates } from "@/app/interfaces"
+import type { InteractiveVideoProps,  } from "@/app/interfaces"
 
 const parsePositionValue = (value: string | undefined, defaultValue: number, isVertical: boolean): number => {
   if (!value) return defaultValue
@@ -31,15 +31,12 @@ const InteractiveVideo = ({
   videoOptions,
   zIndex,
   requestElevation,
-  position = "top-right",
-  customPosition = {},
   onClose,
 }: InteractiveVideoProps) => {
   const [isHovered, setIsHovered] = useState(false)
   const [isDocked, setIsDocked] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [currentVideo, setCurrentVideo] = useState<string>(src)
-  const [positionCoords, setPositionCoords] = useState<Coordinates>({ x: 0, y: 0 })
   const [isDragging, setIsDragging] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
   const [youTubeId, setYouTubeId] = useState<string | null>(null)
