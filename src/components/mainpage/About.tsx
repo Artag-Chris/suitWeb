@@ -2,19 +2,19 @@
 import React, { useState } from 'react';
 import { Button } from '../ui/button';
 import { teamMembers } from '@/app/interfaces/about/aboutUsInterAnddata';
-
+import Image from 'next/image';
 
 function About() {
     const [activeMember, setActiveMember] = useState<number | null>(null);
-    
-    
+
+
     return (
         <section id="nosotros" className="py-40 px-8 bg-black text-white relative overflow-hidden">
             {/* Decorative elements */}
             <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-[#0d0d0d] to-transparent z-0"></div>
             <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-[#0d0d0d] to-transparent z-0"></div>
             <div className="absolute top-1/3 right-0 w-64 h-64 rounded-full bg-[#00C2B5] blur-[100px] opacity-10 z-0"></div>
-            
+
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className="text-center mb-24">
                     <h2 className="text-6xl font-bold tracking-tight mb-6">Equipo de Élite</h2>
@@ -26,27 +26,28 @@ function About() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-24">
                     {teamMembers.map((member, index) => (
-                        <div 
+                        <div
                             key={index}
                             className="bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] border border-gray-800 rounded-xl p-8 transform transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl cursor-pointer"
                             style={{ boxShadow: `0 10px 30px -15px ${member.color}20` }}
                             onClick={() => setActiveMember(index)}
                         >
                             <div className="flex items-center mb-6">
-                                <div 
+                                <div
                                     className="relative rounded-full w-16 h-16 flex items-center justify-center mr-4 overflow-hidden border-2"
                                     style={{ borderColor: member.color }}
                                 >
-                                    <img 
-                                        src={member.avatar} 
+                                    <Image
+                                        src={member.avatar}
                                         alt={member.name}
-                                        className="w-full h-full object-cover"
+                                        fill
+                                        className="object-cover"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
                                 </div>
                                 <div>
                                     <h3 className="text-xl font-semibold">{member.name}</h3>
-                                    <p 
+                                    <p
                                         className="font-light italic"
                                         style={{ color: member.color }}
                                     >
@@ -84,31 +85,33 @@ function About() {
 
             {/* Member Detail Modal */}
             {activeMember !== null && (
-                <div 
+                <div
                     className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4"
                     onClick={() => setActiveMember(null)}
                 >
-                    <div 
+                    <div
                         className="bg-gradient-to-br from-[#0d0d0d] to-[#1a1a1a] border border-gray-800 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
                         onClick={(e) => e.stopPropagation()}
                     >
                         <div className="p-8">
                             <div className="flex justify-between items-start mb-8">
                                 <div className="flex items-center">
-                                    <div 
+                                    <div
                                         className="relative rounded-full w-24 h-24 flex items-center justify-center mr-6 overflow-hidden border-2"
                                         style={{ borderColor: teamMembers[activeMember].color }}
                                     >
-                                        <img 
-                                            src={teamMembers[activeMember].avatar} 
+
+                                        <Image
+                                            src={teamMembers[activeMember].avatar}
                                             alt={teamMembers[activeMember].name}
-                                            className="w-full h-full object-cover"
+                                            fill
+                                            className="object-cover"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
                                     </div>
                                     <div>
                                         <h2 className="text-3xl font-bold">{teamMembers[activeMember].name}</h2>
-                                        <p 
+                                        <p
                                             className="text-xl font-light italic"
                                             style={{ color: teamMembers[activeMember].color }}
                                         >
@@ -116,7 +119,7 @@ function About() {
                                         </p>
                                     </div>
                                 </div>
-                                <button 
+                                <button
                                     onClick={() => setActiveMember(null)}
                                     className="text-gray-500 hover:text-white text-3xl"
                                 >
@@ -140,10 +143,10 @@ function About() {
                                     </h3>
                                     <div className="flex flex-wrap gap-3">
                                         {teamMembers[activeMember].skills.map((skill, index) => (
-                                            <span 
+                                            <span
                                                 key={index}
                                                 className="px-4 py-2 bg-gray-900 rounded-full text-sm"
-                                                style={{ 
+                                                style={{
                                                     border: `1px solid ${teamMembers[activeMember].color}20`,
                                                     color: teamMembers[activeMember].color
                                                 }}
@@ -174,7 +177,7 @@ function About() {
                             </div>
 
                             <div className="mt-10 pt-6 border-t border-gray-800 flex justify-end">
-                                <Button 
+                                <Button
                                     className="bg-[#00C2B5] text-white font-semibold px-8 py-4 hover:bg-[#00a99e] transition-colors"
                                 >
                                     Contactar a {teamMembers[activeMember].name.split(' ')[0]}

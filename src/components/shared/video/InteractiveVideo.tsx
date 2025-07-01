@@ -3,21 +3,6 @@
 import { useState, useRef, useEffect, useCallback } from "react"
 import type { InteractiveVideoProps,  } from "@/app/interfaces"
 
-const parsePositionValue = (value: string | undefined, defaultValue: number, isVertical: boolean): number => {
-  if (!value) return defaultValue
-  if (value.endsWith("px")) {
-    return Number.parseFloat(value)
-  } else if (value.endsWith("%")) {
-    const percentage = Number.parseFloat(value) / 100
-    return isVertical ? window.innerHeight * percentage : window.innerWidth * percentage
-  } else if (value.endsWith("vh")) {
-    return (Number.parseFloat(value) / 100) * window.innerHeight
-  } else if (value.endsWith("vw")) {
-    return (Number.parseFloat(value) / 100) * window.innerWidth
-  } else {
-    return Number.parseFloat(value) || defaultValue
-  }
-}
 
 // Función para extraer el ID de YouTube de la URL
 const getYouTubeId = (url: string): string | null => {
@@ -34,10 +19,10 @@ const InteractiveVideo = ({
   onClose,
 }: InteractiveVideoProps) => {
   const [isHovered, setIsHovered] = useState(false)
-  const [isDocked, setIsDocked] = useState(false)
+  const [isDocked, ] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [currentVideo, setCurrentVideo] = useState<string>(src)
-  const [isDragging, setIsDragging] = useState(false)
+  const [isDragging, ] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
   const [youTubeId, setYouTubeId] = useState<string | null>(null)
   const iframeRef = useRef<HTMLIFrameElement>(null)
