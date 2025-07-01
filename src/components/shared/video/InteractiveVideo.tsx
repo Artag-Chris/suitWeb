@@ -1,35 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import styles from './InteractiveVideo.module.css';
-import { Position } from './InteractiveVideoManager';
-
-interface InteractiveVideoProps {
-    src: string;
-    videoOptions: VideoOption[];
-    zIndex: number;
-    requestElevation: () => void;
-    position?: Position;
-    customPosition?: { top?: string; right?: string; bottom?: string; left?: string };
-    onClose: () => void;
-}
-interface VideoOption {
-    src: string;
-    thumbnail: string;
-    title: string;
-}
-
-interface InteractiveVideoProps {
-    src: string;
-    videoOptions: VideoOption[];
-    zIndex: number;
-    requestElevation: () => void;
-    position?: Position;
-    customPosition?: { top?: string; right?: string; bottom?: string; left?: string };
-}
-
-interface Coordinates {
-    x: number;
-    y: number;
-}
+import { InteractiveVideoProps, Coordinates } from '@/app/interfaces';
 
 const parsePositionValue = (value: string | undefined, defaultValue: number, isVertical: boolean): number => {
     if (!value) return defaultValue;
@@ -46,9 +17,15 @@ const parsePositionValue = (value: string | undefined, defaultValue: number, isV
     } else if (value.endsWith('vw')) {
         return (parseFloat(value) / 100) * window.innerWidth;
     } else {
-        // Asumir que es un número en píxeles
         return parseFloat(value) || defaultValue;
     }
+};
+
+// Función para extraer el ID de YouTube de la URL
+const getYouTubeId = (url: string): string | null => {
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+    const match = url.match(regExp);
+    return (match && match[2].length === 11) ? match[2] : null;
 };
 
 const InteractiveVideo = ({
@@ -66,23 +43,31 @@ const InteractiveVideo = ({
     const [currentVideo, setCurrentVideo] = useState<string>(src);
     const [positionCoords, setPositionCoords] = useState<Coordinates>({ x: 0, y: 0 });
     const [isDragging, setIsDragging] = useState(false);
-    const videoRef = useRef<HTMLVideoElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
+    
+    // Estado para el ID de YouTube
+    const [youTubeId, setYouTubeId] = useState<string | null>(null);
+    
+    // Referencia para el iframe
+    const iframeRef = useRef<HTMLIFrameElement>(null);
 
-    // Elevar el componente cuando está activo
+    // Extraer ID de YouTube cuando cambia el video
+    useEffect(() => {
+        const id = getYouTubeId(currentVideo);
+        setYouTubeId(id);
+    }, [currentVideo]);
+
     useEffect(() => {
         if (isHovered || isDocked || isMenuOpen || isDragging) {
             requestElevation();
         }
     }, [isHovered, isDocked, isMenuOpen, isDragging, requestElevation]);
 
-    // Manejar hover
     const handleMouseEnter = () => setIsHovered(true);
     const handleMouseLeave = useCallback(() => {
         if (!isDocked) setIsHovered(false);
     }, [isDocked]);
 
-    // Alternar menú
     const toggleMenu = () => {
         setIsMenuOpen(prev => {
             if (!prev) requestElevation();
@@ -90,7 +75,6 @@ const InteractiveVideo = ({
         });
     };
 
-    // Alternar dock con posicionamiento inteligente
     const toggleDock = useCallback(() => {
         setIsDocked(prev => {
             const newState = !prev;
@@ -103,7 +87,6 @@ const InteractiveVideo = ({
                     let newX = 0;
                     let newY = 0;
 
-                    // Calcular posición basada en la prop
                     switch (position) {
                         case 'top-right':
                             newX = window.innerWidth - rect.width - 20;
@@ -122,13 +105,43 @@ const InteractiveVideo = ({
                             newY = window.innerHeight - rect.height - 20;
                             break;
                         case 'custom':
-                            // Convertir valores CSS a píxeles
-                            const topValue = parsePositionValue(customPosition.top, 20, true);
-                            const rightValue = parsePositionValue(customPosition.right, 20, false);
-                            const bottomValue = parsePositionValue(customPosition.bottom, 0, true);
-                            const leftValue = parsePositionValue(customPosition.left, 0, false);
+                            const topValue = parsePositionValue(
+                                typeof customPosition.top === 'string'
+                                    ? customPosition.top
+                                    : typeof customPosition.top === 'number'
+                                        ? `${customPosition.top}`
+                                        : undefined,
+                                20,
+                                true
+                            );
+                            const rightValue = parsePositionValue(
+                                typeof customPosition.right === 'string'
+                                    ? customPosition.right
+                                    : typeof customPosition.right === 'number'
+                                        ? `${customPosition.right}`
+                                        : undefined,
+                                20,
+                                false
+                            );
+                            const bottomValue = parsePositionValue(
+                                typeof customPosition.bottom === 'string'
+                                    ? customPosition.bottom
+                                    : typeof customPosition.bottom === 'number'
+                                        ? `${customPosition.bottom}`
+                                        : undefined,
+                                0,
+                                true
+                            );
+                            const leftValue = parsePositionValue(
+                                typeof customPosition.left === 'string'
+                                    ? customPosition.left
+                                    : typeof customPosition.left === 'number'
+                                        ? `${customPosition.left}`
+                                        : undefined,
+                                0,
+                                false
+                            );
 
-                            // Calcular posición con prioridad top/right
                             if (customPosition.top !== undefined || customPosition.bottom !== undefined) {
                                 newY = customPosition.top !== undefined
                                     ? topValue
@@ -160,17 +173,17 @@ const InteractiveVideo = ({
         setIsMenuOpen(false);
     }, [requestElevation, position, customPosition]);
 
-    // Cambiar video
     const changeVideo = (newSrc: string) => {
         setCurrentVideo(newSrc);
         setIsMenuOpen(false);
-        if (videoRef.current) {
-            videoRef.current.load();
-            videoRef.current.play().catch(e => console.error("Error al reproducir:", e));
+        
+        // Si es un video normal (no YouTube)
+        if (!getYouTubeId(newSrc)) {
+            // Aquí podrías manejar videos normales si es necesario
+            console.log("Cambiando a video normal:", newSrc);
         }
     };
 
-    // Drag & drop
     const startDrag = (e: React.MouseEvent<HTMLDivElement>) => {
         if (!isDocked) return;
         setIsDragging(true);
@@ -193,7 +206,6 @@ const InteractiveVideo = ({
 
     const endDrag = useCallback(() => setIsDragging(false), []);
 
-    // Eventos globales
     useEffect(() => {
         if (isDragging) {
             window.addEventListener('mousemove', onDrag);
@@ -205,7 +217,6 @@ const InteractiveVideo = ({
         }
     }, [isDragging, onDrag, endDrag]);
 
-    // Cerrar menú al hacer clic fuera
     useEffect(() => {
         const handleClickOutside = (e: MouseEvent) => {
             if (
@@ -221,7 +232,6 @@ const InteractiveVideo = ({
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, [isMenuOpen]);
 
-    // Ajustar transform-origin según la posición
     useEffect(() => {
         if (!containerRef.current) return;
 
@@ -246,12 +256,11 @@ const InteractiveVideo = ({
         }
     }, [position]);
 
-    // Estilos dinámicos
-   const containerClasses = `
-  ${styles.container}
-  ${isDocked ? styles.docked : ''}
-  ${isMenuOpen ? styles.menuOpen : ''}
-`;
+    const containerClasses = `
+        ${styles.container}
+        ${isDocked ? styles.docked : ''}
+        ${isMenuOpen ? styles.menuOpen : ''}
+    `;
 
     const containerStyle: React.CSSProperties = {
         transform: isDocked
@@ -273,25 +282,36 @@ const InteractiveVideo = ({
             aria-label="Reproductor de video interactivo"
         >
             <div className={styles.videoWrapper}>
-                <video
-                    ref={videoRef}
-                    src={currentVideo}
-                    className={styles.videoPlayer}
-                    controls
-                    playsInline
-                    aria-label="Video principal"
-                />
+                {youTubeId ? (
+                    <iframe
+                        ref={iframeRef}
+                        src={`https://www.youtube.com/embed/${youTubeId}?autoplay=1&rel=0`}
+                        className={styles.videoPlayer}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        title="YouTube video player"
+                    ></iframe>
+                ) : (
+                    <video
+                        src={currentVideo}
+                        className={styles.videoPlayer}
+                        controls
+                        playsInline
+                        aria-label="Video principal"
+                    />
+                )}
             </div>
 
             <div className={styles.controls}>
                 <button
                     onClick={onClose}
                     className={styles.controlButton}
-                    aria-expanded={isMenuOpen}
-                    aria-label="Mostrar opciones de video"
+                    aria-label="Cerrar reproductor"
                 >
-                    {isMenuOpen ? '▲' : '▼'}
+                    ✕
                 </button>
+                
                 <button
                     onClick={toggleDock}
                     className={styles.controlButton}
@@ -300,7 +320,6 @@ const InteractiveVideo = ({
                     {isDocked ? '✕' : '📌'}
                 </button>
 
-                
                 <button
                     onClick={toggleMenu}
                     className={styles.controlButton}

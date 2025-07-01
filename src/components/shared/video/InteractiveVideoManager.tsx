@@ -1,23 +1,7 @@
 "use client";
 import { useState, useCallback } from 'react';
 import InteractiveVideo from './InteractiveVideo';
-
-// Definición de tipos para el manager
-interface VideoOption {
-  src: string;
-  thumbnail: string;
-  title: string;
-}
-
-// Tipos para posición
-export type Position = 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left'| 'middle-right'
-  | 'middle-left' | 'top-middle'
-  | 'bottom-middle' | 'custom';
-
-interface InteractiveVideoManagerProps {
-  position?: Position;
-  customPosition?: { top?: string | number; right?: string | number; bottom?: string | number; left?: string | number };
-}
+import { InteractiveVideoManagerProps, VideoOption } from '@/app/interfaces';
 
 const InteractiveVideoManager = ({
   position = 'top-left',

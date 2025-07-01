@@ -30,7 +30,6 @@ function Hero() {
     const connections: Connection[] = [];
     const particleCount = window.innerWidth < 768 ? 50 : 100;
     
-    // Colores estilo James Bond
     const colors = ['#d4af37', '#c0c0c0', '#0d47a1', '#4a148c'];
     
     // Crear partículas
