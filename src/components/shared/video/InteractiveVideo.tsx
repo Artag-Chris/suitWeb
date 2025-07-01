@@ -2,7 +2,6 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 import styles from './InteractiveVideo.module.css';
 import { Position } from './InteractiveVideoManager';
 
-
 interface InteractiveVideoProps {
     src: string;
     videoOptions: VideoOption[];
@@ -58,7 +57,8 @@ const InteractiveVideo = ({
     zIndex,
     requestElevation,
     position = 'top-right',
-    customPosition = {}
+    customPosition = {},
+    onClose
 }: InteractiveVideoProps) => {
     const [isHovered, setIsHovered] = useState(false);
     const [isDocked, setIsDocked] = useState(false);
@@ -285,7 +285,7 @@ const InteractiveVideo = ({
 
             <div className={styles.controls}>
                 <button
-                    onClick={toggleMenu}
+                    onClick={onClose}
                     className={styles.controlButton}
                     aria-expanded={isMenuOpen}
                     aria-label="Mostrar opciones de video"
