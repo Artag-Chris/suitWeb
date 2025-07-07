@@ -22,7 +22,7 @@ const InteractiveVideoManager = ({ position = "top-left", customPosition = {} }:
 
     setIsAnimating(true)
 
-    if (!isExpanded) {
+    if (!isExpanded) { 
       // Primero trasladar hacia arriba
       setIsTranslating(true)
 
