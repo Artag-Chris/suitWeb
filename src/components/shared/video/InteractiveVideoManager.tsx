@@ -29,7 +29,7 @@ const InteractiveVideoManager = ({ position = "top-left", customPosition = {} }:
       // Después de la traslación, expandir
       setTimeout(() => {
         setIsExpanded(true)
-        setIsTranslating(false)
+        setIsTranslating(false)  
       }, 400)
 
       // Reset animating state
