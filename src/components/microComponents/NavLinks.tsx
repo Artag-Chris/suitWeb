@@ -72,13 +72,13 @@ function NavLinks({
                                 label: "Rendimiento",
                                 icon: <ChartBarIcon className="w-5 h-5 text-purple-500" />,
                                 description: "Métricas de eficiencia del sistema",
-                                href: "/analiticRendimiento"
+                                href: "/rendimiento"
                             },
                             {
                                 label: "Uso",
                                 icon: <TrendingUpIcon className="w-5 h-5 text-teal-500" />,
                                 description: "Tendencias de adopción de usuarios",
-                                href: "/analiticUso"
+                                href: "/uso"
                             },
                         ]
                     }
