@@ -1,7 +1,7 @@
 "use client"
 import { ArrowRight } from "lucide-react"
 import { useRef, useEffect, Suspense } from "react"
-import type { Connection, Particle } from "@/app/interfaces"
+import type { Connection, Particle } from "@/interfaces"
 import InteractiveVideoManager from "../shared/video/InteractiveVideoManager"
 
 function Hero() {

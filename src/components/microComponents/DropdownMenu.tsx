@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useRef } from 'react';
-import { isMenuColumn, MenuItemProps } from '@/app/interfaces';
+import { isMenuColumn, MenuItemProps } from '@/interfaces';
 
 export const DropdownMenu = (props: MenuItemProps) => {
   const { 

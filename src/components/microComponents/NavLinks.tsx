@@ -5,7 +5,7 @@ import {
     BarChart2, Cloud, MoveDiagonal, RefreshCw, Cpu, PieChart, BookOpen, DownloadCloud, FileText, LibraryBig, Video
 } from 'lucide-react';
 import { DropdownMenu } from './DropdownMenu';
-import { NavLinksProps } from '@/app/interfaces';
+import { NavLinksProps } from '@/interfaces';
 import { RocketLaunchIcon } from '@heroicons/react/16/solid';
 
 

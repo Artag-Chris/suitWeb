@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState, useCallback } from "react"
 import InteractiveVideo from "./InteractiveVideo"
-import { InteractiveVideoManagerProps, VideoOption } from "@/app/interfaces"
+import { InteractiveVideoManagerProps, VideoOption } from "@/interfaces"
 
 
 const InteractiveVideoManager = ({ position = "top-left", customPosition = {} }: InteractiveVideoManagerProps) => {

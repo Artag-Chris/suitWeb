@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import { Button } from '../ui/button';
-import { teamMembers } from '@/app/interfaces/about/aboutUsInterAnddata';
+import { teamMembers } from '@/interfaces/about/aboutUsInterAnddata';
 import Image from 'next/image';
 
 function About() {

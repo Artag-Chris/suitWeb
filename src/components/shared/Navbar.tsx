@@ -1,6 +1,6 @@
 "use client"
 import { useState, useRef, useEffect, type MouseEvent } from "react"
-import type { MenuKey, MenuRefs } from "@/app/interfaces"
+import type { MenuKey, MenuRefs } from "@/interfaces"
 import gsap from "gsap"
 import NavLinks from "../microComponents/NavLinks"
 import BottomNavbar from "./BottomNavbar"

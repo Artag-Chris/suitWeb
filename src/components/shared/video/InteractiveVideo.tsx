@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef, useEffect, useCallback } from "react"
-import type { InteractiveVideoProps,  } from "@/app/interfaces"
+import type { InteractiveVideoProps,  } from "@/interfaces"
 
 
 // Función para extraer el ID de YouTube de la URL
