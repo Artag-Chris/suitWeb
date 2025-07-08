@@ -496,10 +496,9 @@ export default function UsoAnaliticasPage() {
         {/* Quote Section */}
         <section className="py-16 px-6 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="relative bg-gradient-to-r from-[#0f0f13]/80 to-[#1a1a2e]/80 backdrop-blur-sm border border-[#d4af37]/30 rounded-2xl p-12">
-              <Quote className="w-12 h-12 text-[#d4af37] mx-auto mb-6" />
+            <div className="relative bg-gradient-to-r from-[#0f0f13]/80 to-[#1a1a2e]/80 backdrop-blur-sm border border-[#d4af37]/30 rounded-2xl p-12">           
               <blockquote className="text-2xl md:text-3xl italic text-[#d4af37] mb-6 leading-relaxed">
-                "No se puede escalar lo que no se controla. Y no se puede controlar lo que no se mide."
+                &quot;No se puede escalar lo que no se controla. Y no se puede controlar lo que no se mide.&quot;
               </blockquote>
               <cite className="text-gray-400">— Principio de gestión empresarial moderna</cite>
             </div>
