@@ -137,12 +137,14 @@ function NavLinks({
                             {
                                 label: "Análisis de Datos",
                                 icon: <PieChart className="w-5 h-5 text-indigo-500" />,
-                                description: "Plataformas de business intelligence"
+                                description: "Plataformas de business intelligence",
+                                href:"/infraestructura/analisisDatos"
                             },
                             {
                                 label: "Machine Learning",
                                 icon: <Cpu className="w-5 h-5 text-pink-500" />,
-                                description: "Modelos predictivos para toma de decisiones"
+                                description: "Modelos predictivos para toma de decisiones",
+                                href:"/infraestructura/machineLearning"
                             },
                         ]
                     }
