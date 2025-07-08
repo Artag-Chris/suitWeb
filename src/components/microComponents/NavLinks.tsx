@@ -37,12 +37,14 @@ function NavLinks({
                             {
                                 label: "Gestión en Tiempo Real",
                                 icon: <RocketLaunchIcon className="w-5 h-5 text-blue-500" />,
-                                description: "Control y monitoreo de servicios en tiempo real"
+                                description: "Control y monitoreo de servicios en tiempo real",
+                                href: "/aboutGestionTiempo"
                             },
                             {
                                 label: "Integraciones API",
                                 icon: <LinkIcon className="w-5 h-5 text-green-500" />,
-                                description: "Conexión con sistemas externos"
+                                description: "Conexión con sistemas externos",
+                                href: "/aboutApis"
                             },
                         ]
                     },
@@ -52,12 +54,14 @@ function NavLinks({
                             {
                                 label: "Clientes",
                                 icon: <UserCircleIcon className="w-5 h-5 text-amber-500" />,
-                                description: "Centralización de datos de usuarios"
+                                description: "Centralización de datos de usuarios",
+                                href: "/aboutGestionClientes"
                             },
                             {
                                 label: "Recursos",
                                 icon: <ServerIcon className="w-5 h-5 text-red-500" />,
-                                description: "Optimización de infraestructura"
+                                description: "Optimización de infraestructura",
+                                href: "/aboutGestionRecursos"
                             },
                         ]
                     },
@@ -67,12 +71,14 @@ function NavLinks({
                             {
                                 label: "Rendimiento",
                                 icon: <ChartBarIcon className="w-5 h-5 text-purple-500" />,
-                                description: "Métricas de eficiencia del sistema"
+                                description: "Métricas de eficiencia del sistema",
+                                href: "/analiticRendimiento"
                             },
                             {
                                 label: "Uso",
                                 icon: <TrendingUpIcon className="w-5 h-5 text-teal-500" />,
-                                description: "Tendencias de adopción de usuarios"
+                                description: "Tendencias de adopción de usuarios",
+                                href: "/analiticUso"
                             },
                         ]
                     }
