@@ -174,8 +174,7 @@ function Hero() {
               </h1>
 
               <p className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-4xl mx-auto font-light tracking-wide">
-                Soluciones de software a medida que transforman tu flujo de trabajo. Diseñadas para ahorrarte tiempo,
-                reducir complicaciones y potenciar tu crecimiento.
+                Convierte tus ideas en herramientas que transforman. Creamos soluciones digitales personalizadas que te ahorran tiempo, eliminan cuellos de botella y aceleran tu crecimiento. Si puedes soñarlo, podemos desarrollarlo
               </p>
             </div>
 
