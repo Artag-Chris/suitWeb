@@ -13,7 +13,6 @@ import {
   MessageSquare,
   Settings,
   ExternalLink,
-  Quote,
   Layers,
   Brain,
   Rocket,

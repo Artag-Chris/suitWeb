@@ -2,9 +2,6 @@
 import React, { useEffect, useRef } from 'react';
 import { isMenuColumn, MenuItemProps } from '@/interfaces';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-
-
 
 export const DropdownMenu = (props: MenuItemProps) => {
   const {
@@ -27,7 +24,6 @@ export const DropdownMenu = (props: MenuItemProps) => {
   } = props;
 
   const localTimerRef = useRef<NodeJS.Timeout | null>(null);
-  const router = useRouter();
   useEffect(() => {
     return () => {
       if (localTimerRef.current) clearTimeout(localTimerRef.current);
