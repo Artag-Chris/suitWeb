@@ -103,12 +103,14 @@ function NavLinks({
                             {
                                 label: "Cloud Híbrida",
                                 icon: <Cloud className="w-5 h-5 text-purple-500" />,
-                                description: "Implementación multi-nube con alta disponibilidad"
+                                description: "Implementación multi-nube con alta disponibilidad",
+                                href: "/infraestructura/cloudhibrida"
                             },
                             {
                                 label: "DevOps & CI/CD",
                                 icon: <MoveDiagonal className="w-5 h-5 text-yellow-500" />,
-                                description: "Automatización de despliegues y pipelines"
+                                description: "Automatización de despliegues y pipelines",
+                                href: "/infraestructura/devops"
                             },
                         ]
                     },
@@ -118,12 +120,14 @@ function NavLinks({
                             {
                                 label: "Migración Legacy",
                                 icon: <RefreshCw className="w-5 h-5 text-red-500" />,
-                                description: "Actualización de sistemas heredados"
+                                description: "Actualización de sistemas heredados",
+                                href:"/infraestructura/migracionLegacy"
                             },
                             {
                                 label: "Optimización SaaS",
                                 icon: <BarChart2 className="w-5 h-5 text-teal-500" />,
-                                description: "Mejora de rendimiento en aplicaciones cloud"
+                                description: "Mejora de rendimiento en aplicaciones cloud",
+                                href:"/infraestructura/saasOptimizacion"
                             },
                         ]
                     },
