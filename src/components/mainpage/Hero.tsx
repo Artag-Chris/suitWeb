@@ -180,7 +180,7 @@ function Hero() {
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               {/* Botón principal estilo referencia */}
-              <button className="group relative px-8 py-4 bg-gradient-to-r from-[#d4af37] to-[#d4af37] text-slate-900 rounded-xl font-medium text-lg transition-all duration-300 hover:from-[#d4af37] hover:to-[#d4af37] hover:scale-105 shadow-lg hover:shadow-xl border border-slate-600/50 hover:text-black">
+              <button className="group relative px-8 py-4 bg-gradient-to-r from-[#d4af37] to-[#b8860b] text-black font-bold rounded-lg text-lg hover:shadow-2xl hover:shadow-[#d4af37]/50 transition-all duration-300 transform hover:scale-105 overflow-hidden">
                 <span className="relative z-10 flex items-center justify-center">
                   Iniciar Proyecto
                   <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
@@ -189,8 +189,8 @@ function Hero() {
               </button>
 
               {/* Botón secundario estilo referencia */}
-              <button className="group relative px-8 py-4 bg-gradient-to-r from-white to-white text-slate-900 rounded-xl font-medium text-lg transition-all duration-300 hover:from-[#d4af37] hover:to-[#d4af37] hover:scale-105 shadow-lg hover:shadow-xl">
-                <span className="relative z-10 flex items-center justify-center text-black">
+              <button className="group px-8 py-4 border-2 border-[#d4af37]/50 text-[#d4af37] font-semibold rounded-lg text-lg hover:bg-[#d4af37]/10 transition-all duration-300 flex items-center justify-center relative overflow-hidden">
+                <span className="relative z-10 flex items-center justify-center text-white">
                   Ver Servicios
                   <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
                 </span>
@@ -198,8 +198,13 @@ function Hero() {
               </button>
             </div>
           </div>
-        </div>
 
+        </div>
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-[#d4af37]/50 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-[#d4af37] rounded-full mt-2 animate-pulse"></div>
+          </div>
+        </div>
         <Suspense
           fallback={
             <div className="absolute inset-0 flex items-center justify-center z-10">
