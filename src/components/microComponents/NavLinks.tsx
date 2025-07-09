@@ -154,12 +154,12 @@ function NavLinks({
                     {
                         category: "CASO DE ESTUDIO",
                         title: "Migración exitosa a microservicios para empresa de telecomunicaciones",
-                        href: "/casos/telecom-microservicios"
+                        href: "/webinar/microservicios"
                     },
                     {
                         category: "WEBINAR",
                         title: "Mejores prácticas en implementación de CI/CD",
-                        href: "/webinars/cicd-best-practices"
+                        href: "/webinar/cicd"
                     }
                 ]}
                 activeMenu={activeMenu}
