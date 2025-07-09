@@ -258,7 +258,7 @@ const WebinarCICDPage = () => {
           </div>
 
           {/* Título Principal */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
             CI/CD: El Futuro del{" "}
             <span className="bg-gradient-to-r from-[#d4af37] to-yellow-500 bg-clip-text text-transparent">
               Desarrollo Ágil
@@ -303,13 +303,19 @@ const WebinarCICDPage = () => {
             </button>
           </div>
         </div>
+        {/* Scroll indicator */}
+           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+              <div className="w-6 h-10 border-2 border-[#d4af37]/50 rounded-full flex justify-center">
+                <div className="w-1 h-3 bg-[#d4af37] rounded-full mt-2 animate-pulse"></div>
+              </div>
+            </div>
       </section>
 
       {/* ¿Qué es CI/CD? */}
       <section className="relative z-10 py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-4xl font-bold mb-6 text-white">
               ¿Qué es <span className="text-[#d4af37]">CI/CD</span>?
             </h2>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
@@ -380,7 +386,7 @@ const WebinarCICDPage = () => {
       <section className="relative z-10 py-20 px-6 bg-gradient-to-r from-slate-900/50 to-purple-900/50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-4xl font-bold mb-6 text-white">
               <span className="text-[#d4af37]">Simulador</span> CI/CD Pipeline
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -468,7 +474,7 @@ const WebinarCICDPage = () => {
       <section className="relative z-10 py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-4xl font-bold mb-6 text-white">
               ¿Por qué es <span className="text-[#d4af37]">Necesaria</span> CI/CD Hoy?
             </h2>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto">
@@ -501,7 +507,7 @@ const WebinarCICDPage = () => {
       <section className="relative z-10 py-20 px-6 bg-gradient-to-r from-slate-900/50 to-purple-900/50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-4xl font-bold mb-6 text-white">
               <span className="text-[#d4af37]">Calculadora</span> de Beneficios CI/CD
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -616,7 +622,7 @@ const WebinarCICDPage = () => {
       <section className="relative z-10 py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-4xl font-bold mb-6 text-white">
               <span className="text-[#d4af37]">Stack Tecnológico</span> CI/CD
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -663,7 +669,7 @@ const WebinarCICDPage = () => {
       <section className="relative z-10 py-20 px-6 bg-gradient-to-r from-slate-900/50 to-purple-900/50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-4xl font-bold mb-6 text-white">
               Casos de <span className="text-[#d4af37]">Éxito</span> Reales
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -747,7 +753,7 @@ const WebinarCICDPage = () => {
       {/* CTA Final */}
       <section className="relative z-10 py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">
+          <h2 className="text-4xl font-bold mb-6 text-white">
             Transforma tu Desarrollo con <span className="text-[#d4af37]">CI/CD</span>
           </h2>
           <p className="text-xl text-gray-300 mb-12 leading-relaxed">
