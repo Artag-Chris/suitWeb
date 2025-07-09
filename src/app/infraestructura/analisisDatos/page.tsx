@@ -142,7 +142,7 @@ export default function AnalisisDatosPage() {
       case "Alto":
         return "text-red-400 bg-red-500/10 border-red-500/30"
       case "Medio":
-        return "text-[#d4af37] bg-yellow-500/10 border-yellow-500/30"
+        return "text-[#d4af37] bg-[#d4af37]/10 border-[#d4af37]/30"
       case "Bajo":
         return "text-green-400 bg-green-500/10 border-green-500/30"
       default:
@@ -157,14 +157,14 @@ export default function AnalisisDatosPage() {
       {/* Hero Section */}
       <section className="relative z-10 pt-32 pb-20 px-6 text-center">
         <div className="max-w-6xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-yellow-500/30 bg-black/20 backdrop-blur-sm mb-8 hover:border-[#d4af37]/50 transition-all duration-300">
+          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#d4af37] bg-black/20 backdrop-blur-sm mb-8 hover:border-[#d4af37]/50 transition-all duration-300">
             <BarChart3 className="w-5 h-5 text-[#d4af37]" />
             <span className="text-[#d4af37] text-sm font-medium tracking-wide">INTELIGENCIA DE DATOS</span>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight text-white">
             Decisiones que tienen{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] via-yellow-300 to-yellow-500 animate-pulse">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] via-[#d4af37] to-[#d4af37] animate-pulse">
               datos detrás
             </span>
           </h1>
@@ -176,46 +176,46 @@ export default function AnalisisDatosPage() {
 
           {/* Real-time Metrics */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-            <div className="group bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-yellow-500/20 rounded-xl p-6 hover:border-[#d4af37]/40 hover:shadow-2xl hover:shadow-yellow-500/10 transition-all duration-500 hover:scale-105">
+            <div className="group bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-[#d4af37]/20 rounded-xl p-6 hover:border-[#d4af37]/40 hover:shadow-2xl hover:shadow-[#d4af37]/10 transition-all duration-500 hover:scale-105">
               <Database className="w-10 h-10 text-[#d4af37] mb-3 mx-auto group-hover:scale-110 transition-transform duration-300" />
               <div className="text-3xl font-bold text-white mb-1">{metrics.dataPoints.toLocaleString()}</div>
               <div className="text-sm text-gray-400">Puntos de Datos</div>
               <div className="w-full h-1 bg-gray-700 rounded-full mt-3 overflow-hidden">
                 <div
-                  className="h-full bg-gradient-to-r from-[#d4af37] to-yellow-500 rounded-full animate-pulse"
+                  className="h-full bg-gradient-to-r from-[#d4af37] to-[#d4af37] rounded-full animate-pulse"
                   style={{ width: "85%" }}
                 />
               </div>
             </div>
-            <div className="group bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-yellow-500/20 rounded-xl p-6 hover:border-[#d4af37]/40 hover:shadow-2xl hover:shadow-yellow-500/10 transition-all duration-500 hover:scale-105">
+            <div className="group bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-[#d4af37]/20 rounded-xl p-6 hover:border-[#d4af37]/40 hover:shadow-2xl hover:shadow-[#d4af37]/10 transition-all duration-500 hover:scale-105">
               <Eye className="w-10 h-10 text-[#d4af37] mb-3 mx-auto group-hover:scale-110 transition-transform duration-300" />
               <div className="text-3xl font-bold text-white mb-1">{metrics.insights}</div>
               <div className="text-sm text-gray-400">Insights Generados</div>
               <div className="w-full h-1 bg-gray-700 rounded-full mt-3 overflow-hidden">
                 <div
-                  className="h-full bg-gradient-to-r from-[#d4af37] to-yellow-500 rounded-full animate-pulse"
+                  className="h-full bg-gradient-to-r from-[#d4af37] to-[#d4af37] rounded-full animate-pulse"
                   style={{ width: "92%" }}
                 />
               </div>
             </div>
-            <div className="group bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-yellow-500/20 rounded-xl p-6 hover:border-[#d4af37]/40 hover:shadow-2xl hover:shadow-yellow-500/10 transition-all duration-500 hover:scale-105">
+            <div className="group bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-[#d4af37]/20 rounded-xl p-6 hover:border-[#d4af37]/40 hover:shadow-2xl hover:shadow-[#d4af37]/10 transition-all duration-500 hover:scale-105">
               <Target className="w-10 h-10 text-[#d4af37] mb-3 mx-auto group-hover:scale-110 transition-transform duration-300" />
               <div className="text-3xl font-bold text-white mb-1">{metrics.accuracy.toFixed(1)}%</div>
               <div className="text-sm text-gray-400">Precisión</div>
               <div className="w-full h-1 bg-gray-700 rounded-full mt-3 overflow-hidden">
                 <div
-                  className="h-full bg-gradient-to-r from-[#d4af37] to-yellow-500 rounded-full animate-pulse"
+                  className="h-full bg-gradient-to-r from-[#d4af37] to-[#d4af37] rounded-full animate-pulse"
                   style={{ width: "96%" }}
                 />
               </div>
             </div>
-            <div className="group bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-yellow-500/20 rounded-xl p-6 hover:border-[#d4af37]/40 hover:shadow-2xl hover:shadow-yellow-500/10 transition-all duration-500 hover:scale-105">
+            <div className="group bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-[#d4af37]/20 rounded-xl p-6 hover:border-[#d4af37]/40 hover:shadow-2xl hover:shadow-[#d4af37]/10 transition-all duration-500 hover:scale-105">
               <Brain className="w-10 h-10 text-[#d4af37] mb-3 mx-auto group-hover:scale-110 transition-transform duration-300" />
               <div className="text-3xl font-bold text-white mb-1">{metrics.predictions.toFixed(1)}%</div>
               <div className="text-sm text-gray-400">Predicciones</div>
               <div className="w-full h-1 bg-gray-700 rounded-full mt-3 overflow-hidden">
                 <div
-                  className="h-full bg-gradient-to-r from-[#d4af37] to-yellow-500 rounded-full animate-pulse"
+                  className="h-full bg-gradient-to-r from-[#d4af37] to-[#d4af37] rounded-full animate-pulse"
                   style={{ width: "89%" }}
                 />
               </div>
@@ -223,13 +223,13 @@ export default function AnalisisDatosPage() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="group bg-gradient-to-r from-[#d4af37] to-yellow-500 hover:from-yellow-300 hover:to-[#d4af37] text-black px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/25">
+            <button className="group bg-gradient-to-r from-[#d4af37] to-[#d4af37] hover:from-yellow-300 hover:to-[#d4af37] text-black px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#d4af37]/25">
               <span className="flex items-center gap-3">
                 <Activity className="w-5 h-5 group-hover:animate-pulse" />
                 Solicita una demostración
               </span>
             </button>
-            <button className="group border-2 border-yellow-500 text-[#d4af37] hover:bg-yellow-500 hover:text-black px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:shadow-2xl hover:shadow-yellow-500/25">
+            <button className="group border-2 border-[#d4af37] text-[#d4af37] hover:bg-[#d4af37] hover:text-black px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:shadow-2xl hover:shadow-[#d4af37]/25">
               <span className="flex items-center gap-3">
                 Ver casos de éxito
                 <TrendingUp className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -242,13 +242,13 @@ export default function AnalisisDatosPage() {
       {/* What is Data Analysis */}
       <section className="relative z-10 py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] to-yellow-500 mb-8">
+          <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] to-[#d4af37] mb-8">
             ¿Por qué analizar tus datos?
           </h2>
           <p className="text-xl text-gray-300 max-w-5xl mx-auto leading-relaxed">
             Porque los datos ya los tienes: ventas, usuarios, visitas, campañas, procesos... pero si no los analizas,
             estás operando a ciegas. El análisis de datos convierte información cruda en{" "}
-            <span className="text-[#d4af37] font-semibold bg-yellow-500/10 px-2 py-1 rounded-lg">
+            <span className="text-[#d4af37] font-semibold bg-[#d4af37]/10 px-2 py-1 rounded-lg">
               decisiones estratégicas
             </span>
             .
@@ -259,25 +259,25 @@ export default function AnalisisDatosPage() {
       {/* Data Analysis Simulator */}
       <section className="relative z-10 py-20 px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] to-yellow-500">
+          <h2 className="text-4xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] to-[#d4af37]">
             Simulador de Análisis de Datos
           </h2>
 
-          <div className="bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-yellow-500/20 rounded-2xl p-8 hover:border-[#d4af37]/40 transition-all duration-500 shadow-2xl">
+          <div className="bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-[#d4af37]/20 rounded-2xl p-8 hover:border-[#d4af37]/40 transition-all duration-500 shadow-2xl">
             <div className="flex justify-between items-center mb-10">
               <h3 className="text-2xl font-bold text-white">Proceso de Análisis Completo</h3>
               <div className="flex gap-4">
                 <button
                   onClick={runAnalysis}
                   disabled={analysisState.isRunning}
-                  className="flex items-center gap-3 bg-gradient-to-r from-[#d4af37] to-yellow-500 hover:from-yellow-300 hover:to-[#d4af37] disabled:from-gray-600 disabled:to-gray-700 text-black px-6 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 disabled:scale-100"
+                  className="flex items-center gap-3 bg-gradient-to-r from-[#d4af37] to-[#d4af37] hover:from-yellow-300 hover:to-[#d4af37] disabled:from-gray-600 disabled:to-gray-700 text-black px-6 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 disabled:scale-100"
                 >
                   <Play className="w-5 h-5" />
                   {analysisState.isRunning ? "Ejecutando..." : "Ejecutar"}
                 </button>
                 <button
                   onClick={resetAnalysis}
-                  className="flex items-center gap-3 border-2 border-yellow-500 text-[#d4af37] hover:bg-yellow-500 hover:text-black px-6 py-3 rounded-xl font-bold transition-all duration-300"
+                  className="flex items-center gap-3 border-2 border-[#d4af37] text-[#d4af37] hover:bg-[#d4af37] hover:text-black px-6 py-3 rounded-xl font-bold transition-all duration-300"
                 >
                   <RotateCcw className="w-5 h-5" />
                   Reset
@@ -288,13 +288,13 @@ export default function AnalisisDatosPage() {
             <div className="space-y-6">
               {analysisPhases.map((phase, index) => (
                 <div key={index} className="group">
-                  <div className="flex items-center gap-6 p-6 rounded-xl bg-gradient-to-r from-black/40 to-black/20 border border-gray-700/50 hover:border-yellow-500/30 transition-all duration-300">
+                  <div className="flex items-center gap-6 p-6 rounded-xl bg-gradient-to-r from-black/40 to-black/20 border border-gray-700/50 hover:border-[#d4af37]/30 transition-all duration-300">
                     <div
                       className={`w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold transition-all duration-300 ${
                         index < analysisState.currentPhase
                           ? "bg-gradient-to-r from-green-400 to-green-500 text-black shadow-lg shadow-green-500/25"
                           : index === analysisState.currentPhase && analysisState.isRunning
-                            ? "bg-gradient-to-r from-[#d4af37] to-yellow-500 text-black shadow-lg shadow-yellow-500/25 animate-pulse"
+                            ? "bg-gradient-to-r from-[#d4af37] to-[#d4af37] text-black shadow-lg shadow-[#d4af37]/25 animate-pulse"
                             : "bg-gradient-to-r from-gray-600 to-gray-700 text-gray-300"
                       }`}
                     >
@@ -305,7 +305,7 @@ export default function AnalisisDatosPage() {
                       <div className="flex justify-between items-center mb-3">
                         <span className="text-white font-bold text-lg">{phase.name}</span>
                         <div className="flex items-center gap-4">
-                          <span className="text-[#d4af37] font-bold text-sm bg-yellow-500/10 px-3 py-1 rounded-full">
+                          <span className="text-[#d4af37] font-bold text-sm bg-[#d4af37]/10 px-3 py-1 rounded-full">
                             {phase.improvement}
                           </span>
                           <span
@@ -319,7 +319,7 @@ export default function AnalisisDatosPage() {
                       {index === analysisState.currentPhase && analysisState.isRunning && (
                         <div className="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
                           <div
-                            className="bg-gradient-to-r from-[#d4af37] to-yellow-500 h-3 rounded-full transition-all duration-100 shadow-lg"
+                            className="bg-gradient-to-r from-[#d4af37] to-[#d4af37] h-3 rounded-full transition-all duration-100 shadow-lg"
                             style={{ width: `${analysisState.progress}%` }}
                           />
                         </div>
@@ -331,7 +331,7 @@ export default function AnalisisDatosPage() {
             </div>
 
             {analysisState.completed && (
-              <div className="mt-10 p-8 bg-gradient-to-r from-yellow-500/10 to-[#d4af37]/10 border border-yellow-500/30 rounded-2xl">
+              <div className="mt-10 p-8 bg-gradient-to-r from-[#d4af37]/10 to-[#d4af37]/10 border border-[#d4af37]/30 rounded-2xl">
                 <h4 className="text-2xl font-bold text-[#d4af37] mb-6 text-center">🎉 Análisis Completado</h4>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                   <div className="bg-black/40 rounded-xl p-4">
@@ -360,7 +360,7 @@ export default function AnalisisDatosPage() {
       {/* Benefits */}
       <section className="relative z-10 py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] to-yellow-500">
+          <h2 className="text-4xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] to-[#d4af37]">
             Lo que puedes lograr con análisis de datos
           </h2>
 
@@ -406,12 +406,12 @@ export default function AnalisisDatosPage() {
                 title: "Decisiones basadas en hechos",
                 desc: "Deja de suponer y empieza a actuar con evidencia concreta.",
                 metric: "+200% precisión",
-                color: "from-[#d4af37] to-yellow-500",
+                color: "from-[#d4af37] to-[#d4af37]",
               },
             ].map((benefit, index) => (
               <div
                 key={index}
-                className="group bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-yellow-500/20 rounded-2xl p-8 hover:border-[#d4af37]/40 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/10"
+                className="group bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-[#d4af37]/20 rounded-2xl p-8 hover:border-[#d4af37]/40 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#d4af37]/10"
               >
                 <div
                   className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${benefit.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
@@ -420,7 +420,7 @@ export default function AnalisisDatosPage() {
                 </div>
                 <h3 className="text-xl font-bold text-white mb-4">{benefit.title}</h3>
                 <p className="text-gray-300 mb-6 leading-relaxed">{benefit.desc}</p>
-                <div className="text-[#d4af37] font-bold text-lg bg-yellow-500/10 px-4 py-2 rounded-full inline-block">
+                <div className="text-[#d4af37] font-bold text-lg bg-[#d4af37]/10 px-4 py-2 rounded-full inline-block">
                   {benefit.metric}
                 </div>
               </div>
@@ -432,11 +432,11 @@ export default function AnalisisDatosPage() {
       {/* BI Calculator */}
       <section className="relative z-10 py-20 px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] to-yellow-500">
+          <h2 className="text-4xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] to-[#d4af37]">
             Calculadora de Business Intelligence
           </h2>
 
-          <div className="bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-yellow-500/20 rounded-2xl p-8 hover:border-[#d4af37]/40 transition-all duration-500 shadow-2xl">
+          <div className="bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-[#d4af37]/20 rounded-2xl p-8 hover:border-[#d4af37]/40 transition-all duration-500 shadow-2xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div>
                 <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
@@ -454,7 +454,7 @@ export default function AnalisisDatosPage() {
                           onClick={() => setBiConfig((prev) => ({ ...prev, dataVolume: size }))}
                           className={`px-6 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 ${
                             biConfig.dataVolume === size
-                              ? "bg-gradient-to-r from-[#d4af37] to-yellow-500 text-black shadow-lg shadow-yellow-500/25"
+                              ? "bg-gradient-to-r from-[#d4af37] to-[#d4af37] text-black shadow-lg shadow-[#d4af37]/25"
                               : "bg-gray-700 text-gray-300 hover:bg-gray-600"
                           }`}
                         >
@@ -473,7 +473,7 @@ export default function AnalisisDatosPage() {
                           onClick={() => setBiConfig((prev) => ({ ...prev, businessType: type }))}
                           className={`px-6 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 ${
                             biConfig.businessType === type
-                              ? "bg-gradient-to-r from-[#d4af37] to-yellow-500 text-black shadow-lg shadow-yellow-500/25"
+                              ? "bg-gradient-to-r from-[#d4af37] to-[#d4af37] text-black shadow-lg shadow-[#d4af37]/25"
                               : "bg-gray-700 text-gray-300 hover:bg-gray-600"
                           }`}
                         >
@@ -509,19 +509,19 @@ export default function AnalisisDatosPage() {
                 </h3>
 
                 <div className="space-y-6">
-                  <div className="flex justify-between items-center p-6 bg-gradient-to-r from-black/40 to-black/20 rounded-xl border border-gray-700/50 hover:border-yellow-500/30 transition-all duration-300">
+                  <div className="flex justify-between items-center p-6 bg-gradient-to-r from-black/40 to-black/20 rounded-xl border border-gray-700/50 hover:border-[#d4af37]/30 transition-all duration-300">
                     <span className="text-gray-300 font-medium">Tiempo a Insights</span>
                     <span className="text-[#d4af37] font-bold text-xl">{biResults.timeToInsight}</span>
                   </div>
-                  <div className="flex justify-between items-center p-6 bg-gradient-to-r from-black/40 to-black/20 rounded-xl border border-gray-700/50 hover:border-yellow-500/30 transition-all duration-300">
+                  <div className="flex justify-between items-center p-6 bg-gradient-to-r from-black/40 to-black/20 rounded-xl border border-gray-700/50 hover:border-[#d4af37]/30 transition-all duration-300">
                     <span className="text-gray-300 font-medium">Reducción de Costos</span>
                     <span className="text-[#d4af37] font-bold text-xl">{biResults.costReduction}</span>
                   </div>
-                  <div className="flex justify-between items-center p-6 bg-gradient-to-r from-black/40 to-black/20 rounded-xl border border-gray-700/50 hover:border-yellow-500/30 transition-all duration-300">
+                  <div className="flex justify-between items-center p-6 bg-gradient-to-r from-black/40 to-black/20 rounded-xl border border-gray-700/50 hover:border-[#d4af37]/30 transition-all duration-300">
                     <span className="text-gray-300 font-medium">Velocidad de Decisión</span>
                     <span className="text-[#d4af37] font-bold text-xl">{biResults.decisionSpeed}</span>
                   </div>
-                  <div className="flex justify-between items-center p-6 bg-gradient-to-r from-black/40 to-black/20 rounded-xl border border-gray-700/50 hover:border-yellow-500/30 transition-all duration-300">
+                  <div className="flex justify-between items-center p-6 bg-gradient-to-r from-black/40 to-black/20 rounded-xl border border-gray-700/50 hover:border-[#d4af37]/30 transition-all duration-300">
                     <span className="text-gray-300 font-medium">Precisión</span>
                     <span className="text-[#d4af37] font-bold text-xl">{biResults.accuracy}</span>
                   </div>
@@ -535,7 +535,7 @@ export default function AnalisisDatosPage() {
       {/* Tech Stack */}
       <section className="relative z-10 py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-16 text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] to-yellow-500">
+          <h2 className="text-4xl font-bold mb-16 text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] to-[#d4af37]">
             Herramientas que usamos en análisis de datos
           </h2>
 
@@ -552,12 +552,12 @@ export default function AnalisisDatosPage() {
             ].map((tool, index) => (
               <div
                 key={index}
-                className="group bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-yellow-500/20 rounded-xl p-6 hover:border-[#d4af37]/40 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/10"
+                className="group bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-[#d4af37]/20 rounded-xl p-6 hover:border-[#d4af37]/40 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#d4af37]/10"
               >
                 <div className="text-xl font-bold text-white mb-3">{tool.name}</div>
                 <div className="w-full bg-gray-700 rounded-full h-3 mb-3 overflow-hidden">
                   <div
-                    className="bg-gradient-to-r from-[#d4af37] to-yellow-500 h-3 rounded-full transition-all duration-1000 shadow-lg"
+                    className="bg-gradient-to-r from-[#d4af37] to-[#d4af37] h-3 rounded-full transition-all duration-1000 shadow-lg"
                     style={{ width: `${tool.adoption}%` }}
                   />
                 </div>
@@ -567,7 +567,7 @@ export default function AnalisisDatosPage() {
                     tool.rating === "Excelente"
                       ? "bg-green-500/20 text-green-400"
                       : tool.rating === "Muy Bueno"
-                        ? "bg-yellow-500/20 text-[#d4af37]"
+                        ? "bg-[#d4af37]/20 text-[#d4af37]"
                         : "bg-blue-500/20 text-blue-400"
                   }`}
                 >
@@ -582,7 +582,7 @@ export default function AnalisisDatosPage() {
       {/* Success Cases */}
       <section className="relative z-10 py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] to-yellow-500">
+          <h2 className="text-4xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] to-[#d4af37]">
             Empresas que ahora ven con claridad
           </h2>
 
@@ -633,11 +633,11 @@ export default function AnalisisDatosPage() {
             ].map((caso, index) => (
               <div
                 key={index}
-                className="group bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-yellow-500/20 rounded-2xl p-8 hover:border-[#d4af37]/40 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/10"
+                className="group bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-[#d4af37]/20 rounded-2xl p-8 hover:border-[#d4af37]/40 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#d4af37]/10"
               >
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold text-white mb-2">{caso.empresa}</h3>
-                  <div className="text-[#d4af37] font-bold text-sm bg-yellow-500/10 px-3 py-1 rounded-full inline-block">
+                  <div className="text-[#d4af37] font-bold text-sm bg-[#d4af37]/10 px-3 py-1 rounded-full inline-block">
                     {caso.sector}
                   </div>
                 </div>
@@ -673,7 +673,7 @@ export default function AnalisisDatosPage() {
                     {caso.tech.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-3 py-1 bg-yellow-500/20 text-[#d4af37] text-xs rounded-full border border-yellow-500/30"
+                        className="px-3 py-1 bg-[#d4af37]/20 text-[#d4af37] text-xs rounded-full border border-[#d4af37]/30"
                       >
                         {tech}
                       </span>
@@ -696,7 +696,7 @@ export default function AnalisisDatosPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold mb-8 text-white">
             Tus datos ya tienen respuestas. Solo hay que hacer las{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] to-yellow-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] to-[#d4af37]">
               preguntas correctas
             </span>
             .
@@ -706,13 +706,13 @@ export default function AnalisisDatosPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="group bg-gradient-to-r from-[#d4af37] to-yellow-500 hover:from-yellow-300 hover:to-[#d4af37] text-black px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/25">
+            <button className="group bg-gradient-to-r from-[#d4af37] to-[#d4af37] hover:from-yellow-300 hover:to-[#d4af37] text-black px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#d4af37]/25">
               <span className="flex items-center gap-3">
                 <BarChart3 className="w-5 h-5 group-hover:animate-pulse" />
                 Empezar análisis de datos
               </span>
             </button>
-            <button className="group border-2 border-yellow-500 text-[#d4af37] hover:bg-yellow-500 hover:text-black px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:shadow-2xl hover:shadow-yellow-500/25">
+            <button className="group border-2 border-[#d4af37] text-[#d4af37] hover:bg-[#d4af37] hover:text-black px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:shadow-2xl hover:shadow-[#d4af37]/25">
               <span className="flex items-center gap-3">
                 Optimizar mi plataforma
                 <TrendingUp className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
