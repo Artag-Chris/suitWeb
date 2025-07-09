@@ -181,7 +181,8 @@ function NavLinks({
                             {
                                 label: "Whitepapers",
                                 icon: <FileText className="w-5 h-5 text-blue-500" />,
-                                description: "Documentos técnicos profundos"
+                                description: "Documentos técnicos profundos",
+                                href:"/webinar/whitepapers"
                             },
                             {
                                 label: "Casos de Estudio",
