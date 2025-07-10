@@ -28,7 +28,7 @@ export const teamMembers = [
             avatar: AVATARS[1]
         },
         {
-            name: "Marcus Johnson",
+            name: "Maria Johnson",
             title: "Cloud Strategist",
             description: "AWS expert who builds resilient, scalable infrastructures. Ensures your systems withstand any challenge.",
             bio: "Cloud architect with 8+ years designing high-availability systems. AWS Certified Solutions Architect Professional. Specializes in serverless and containerized solutions.",
@@ -37,7 +37,7 @@ export const teamMembers = [
             avatar: AVATARS[2]
         },
         {
-            name: "Elena Rodriguez",
+            name: "Camilo Rodriguez",
             title: "Python Alchemist",
             description: "Transforming data into actionable insights with ML and AI. Creates intelligent solutions for complex challenges.",
             bio: "Data scientist and Python expert. Developed ML models for financial forecasting and natural language processing. Passionate about ethical AI implementation.",
@@ -46,7 +46,7 @@ export const teamMembers = [
             avatar: AVATARS[3]
         },
         {
-            name: "David Kim",
+            name: "Elisa Kim",
             title: "DevOps Sentinel",
             description: "Guardian of CI/CD pipelines and Kubernetes clusters. Ensures your deployments are flawless and secure.",
             bio: "DevOps engineer focused on security and reliability. Built deployment pipelines handling 1M+ daily transactions. Kubernetes Certified Administrator.",
@@ -55,7 +55,7 @@ export const teamMembers = [
             avatar: AVATARS[4]
         },
         {
-            name: "Olivia Smith",
+            name: "Marcos Smith",
             title: "Blockchain Architect",
             description: "Building decentralized future with smart contracts. Creates transparent, secure transactional systems.",
             bio: "Blockchain pioneer with expertise in Ethereum and Solidity. Developed DeFi platforms handling $100M+ in transactions. Focused on security and smart contract auditing.",

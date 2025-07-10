@@ -7,9 +7,8 @@ import Image from 'next/image';
 function About() {
     const [activeMember, setActiveMember] = useState<number | null>(null);
 
-
     return (
-        <section id="nosotros" className="py-40 px-8 bg-black text-white relative overflow-hidden">
+        <section id="nosotros" className="py-40 px-8  text-white relative overflow-hidden">
             {/* Decorative elements */}
             <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-[#0d0d0d] to-transparent z-0"></div>
             <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-[#0d0d0d] to-transparent z-0"></div>

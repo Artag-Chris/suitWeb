@@ -5,10 +5,10 @@ import { Button } from '../ui/button'
 function CTA() {
     return (
         <>
-            <section className="py-40 px-8 bg-gray-50">
+            <section className="py-40 px-8  backdrop-blur-md">
                 <div className="max-w-5xl mx-auto text-center">
                     <div className="space-y-16">
-                        <h2 className="text-6xl font-bold tracking-tight text-black">Transformamos ideas en realidad digital</h2>
+                        <h2 className="text-6xl font-bold tracking-tight text-white">Transformamos ideas en realidad digital</h2>
                         <p className="text-xl text-gray-600 leading-relaxed font-light max-w-3xl mx-auto">
                             Cada línea de código, cada decisión de diseño, cada detalle técnico está pensado para impulsar el
                             crecimiento de tu negocio.

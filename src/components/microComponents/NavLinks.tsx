@@ -121,13 +121,13 @@ function NavLinks({
                                 label: "Migración Legacy",
                                 icon: <RefreshCw className="w-5 h-5 text-red-500" />,
                                 description: "Actualización de sistemas heredados",
-                                href:"/infraestructura/migracionLegacy"
+                                href: "/infraestructura/migracionLegacy"
                             },
                             {
                                 label: "Optimización SaaS",
                                 icon: <BarChart2 className="w-5 h-5 text-teal-500" />,
                                 description: "Mejora de rendimiento en aplicaciones cloud",
-                                href:"/infraestructura/saasOptimizacion"
+                                href: "/infraestructura/saasOptimizacion"
                             },
                         ]
                     },
@@ -138,13 +138,13 @@ function NavLinks({
                                 label: "Análisis de Datos",
                                 icon: <PieChart className="w-5 h-5 text-indigo-500" />,
                                 description: "Plataformas de business intelligence",
-                                href:"/infraestructura/analisisDatos"
+                                href: "/infraestructura/analisisDatos"
                             },
                             {
                                 label: "Machine Learning",
                                 icon: <Cpu className="w-5 h-5 text-pink-500" />,
                                 description: "Modelos predictivos para toma de decisiones",
-                                href:"/infraestructura/machineLearning"
+                                href: "/infraestructura/machineLearning"
                             },
                         ]
                     }
@@ -182,7 +182,7 @@ function NavLinks({
                                 label: "Whitepapers",
                                 icon: <FileText className="w-5 h-5 text-blue-500" />,
                                 description: "Documentos técnicos profundos",
-                                href:"/webinar/whitepapers"
+                                href: "/webinar/whitepapers"
                             },
                             {
                                 label: "Casos de Estudio",
