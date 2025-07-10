@@ -1,101 +1,20 @@
 "use client"
 
 import ParticleBackground from "@/components/microComponents/ParticleBackground"
+import { benefitsApis, favoriteApis } from "@/dataSections"
 import {
-  Zap,
-  MessageSquare,
-  CreditCard,
-  MapPin,
-  Phone,
-  BarChart3,
   ArrowRight,
-  Shield,
-  Cpu,
   Globe,
-  Layers,
   Code,
   Sparkles,
   CheckCircle,
   ExternalLink,
 } from "lucide-react"
 
-const benefits = [
-  {
-    title: "Comunicación",
-    description: "APIs de WhatsApp y correo automatizado para mejorar la relación con tus clientes.",
-    icon: <MessageSquare className="w-6 h-6" />,
-    gradient: "from-blue-500 to-cyan-500",
-  },
-  {
-    title: "Eficiencia",
-    description: "Integración de pagos, validación de identidad y procesamiento automático.",
-    icon: <Zap className="w-6 h-6" />,
-    gradient: "from-yellow-500 to-orange-500",
-  },
-  {
-    title: "Datos",
-    description: "Uso de APIs para extraer, visualizar y analizar información en tiempo real.",
-    icon: <BarChart3 className="w-6 h-6" />,
-    gradient: "from-purple-500 to-pink-500",
-  },
-  {
-    title: "Escalabilidad",
-    description: "Conexión con servicios en la nube y terceros sin sobrecargar tu backend.",
-    icon: <Layers className="w-6 h-6" />,
-    gradient: "from-green-500 to-teal-500",
-  },
-]
-
-const favoriteApis = [
-  {
-    name: "Meta WhatsApp API",
-    description: "Para comunicación automatizada y eventos en tiempo real.",
-    icon: <MessageSquare className="w-8 h-8" />,
-    category: "COMUNICACIÓN",
-    features: ["Mensajes automáticos", "Webhooks", "Media support"],
-  },
-  {
-    name: "Payvalida y Goupagos",
-    description: "Pagos rápidos, seguros y escalables.",
-    icon: <CreditCard className="w-8 h-8" />,
-    category: "PAGOS",
-    features: ["PSE", "Tarjetas", "Billeteras digitales"],
-  },
-  {
-    name: "Deceval",
-    description: "Integración con servicios financieros en Colombia.",
-    icon: <Shield className="w-8 h-8" />,
-    category: "FINANCIERO",
-    features: ["Validación", "Consultas", "Reportes"],
-  },
-  {
-    name: "Google Maps API",
-    description: "Ubicaciones, rutas y validación geográfica.",
-    icon: <MapPin className="w-8 h-8" />,
-    category: "GEOLOCALIZACIÓN",
-    features: ["Mapas", "Rutas", "Geocoding"],
-  },
-  {
-    name: "Twilio",
-    description: "Mensajería SMS, voz y autenticación 2FA.",
-    icon: <Phone className="w-8 h-8" />,
-    category: "COMUNICACIÓN",
-    features: ["SMS", "Voz", "2FA"],
-  },
-  {
-    name: "API Administrativa",
-    description: "Mantente siempre informado sobre tu negocio en tiempo real.",
-    icon: <Cpu className="w-8 h-8" />,
-    category: "MONITOREO",
-    features: ["Dashboard", "Alertas", "Analytics"],
-  },
-]
-
 export default function Page() {
   return (
     <>
       <ParticleBackground />
-
       <div className="relative z-10 min-h-screen text-white font-sans">
         {/* Hero Section */}
         <section className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
@@ -168,7 +87,7 @@ export default function Page() {
 
               {/* Right Benefits Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {benefits.map((benefit, index) => (
+                {benefitsApis.map((benefit, index) => (
                   <div
                     key={index}
                     className="group relative bg-gradient-to-br from-[#1a1a2e]/80 to-[#16213e]/80 backdrop-blur-sm border border-[#d4af37]/20 rounded-xl p-6 hover:border-[#d4af37]/50 transition-all duration-500 hover:transform hover:scale-105"
