@@ -131,8 +131,12 @@ function Navbar() {
       <header ref={topNavRef} className="border-b border-[#4B5563] bg-[#0F0F13] fixed w-full z-50">
         <div className="max-w-7xl mx-auto px-8 py-5">
           <div className="flex items-center justify-between">
-            <div className="flex items-center">
+            <div
+              className="flex flex-col items-center cursor-pointer"
+              onClick={() => { window.location.href = "/" }}
+            >
               <span className="text-2xl font-light tracking-wider text-white">FINOVA</span>
+              <span className="font-bold tracking-wider text-[#d4af37] ml-1">Desarrollo</span>
             </div>
 
             <NavLinks
