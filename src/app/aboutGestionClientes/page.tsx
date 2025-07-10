@@ -15,7 +15,6 @@ export default function ClientesPage() {
   return (
     <>
       <ParticleBackground />
-
       <div className="relative z-10 min-h-screen text-white font-sans">
         {/* Hero Section */}
         <section className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden">

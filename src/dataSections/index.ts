@@ -3,3 +3,5 @@ export * from './gestionTiempo/gestionTiempo'
 export * from "./adoutApis/apis"
 export * from './GestionClientes/gestionClientes'
 export * from './gestionRecursos/recursos'
+export * from './rendimiento/rendimiento'
+export * from './uso/uso'
