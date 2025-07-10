@@ -1,96 +1,15 @@
 "use client"
 
 import ParticleBackground from "@/components/microComponents/ParticleBackground"
+import { customerCycle, caseStudies, beforeAfter } from "@/dataSections"
 import {
   Users,
-  MessageCircle,
-  Target,
-  Heart,
   TrendingUp,
-  Clock,
   CheckCircle,
   XCircle,
   ArrowRight,
-  Shield,
-  Calendar,
-  Award,
   ExternalLink,
 } from "lucide-react"
-
-const customerCycle = [
-  {
-    title: "Contacto",
-    description: "Llega desde múltiples canales: sitio, redes, chat.",
-    icon: <MessageCircle className="w-8 h-8" />,
-    gradient: "from-blue-500 to-cyan-500",
-  },
-  {
-    title: "Seguimiento",
-    description: "Automatiza saludos, recordatorios, info clave.",
-    icon: <Clock className="w-8 h-8" />,
-    gradient: "from-purple-500 to-pink-500",
-  },
-  {
-    title: "Conversión",
-    description: "Con herramientas conectadas que entienden sus necesidades.",
-    icon: <Target className="w-8 h-8" />,
-    gradient: "from-green-500 to-teal-500",
-  },
-  {
-    title: "Fidelización",
-    description: "Personaliza y cuida la experiencia posventa.",
-    icon: <Heart className="w-8 h-8" />,
-    gradient: "from-red-500 to-pink-500",
-  },
-]
-
-const caseStudies = [
-  {
-    title: "Clínica Estética",
-    category: "SALUD & BELLEZA",
-    result: "Redujeron cancelaciones 40% con recordatorios automáticos.",
-    icon: <Calendar className="w-8 h-8" />,
-    metrics: [
-      { label: "Cancelaciones", value: "-40%" },
-      { label: "Satisfacción", value: "+65%" },
-    ],
-  },
-  {
-    title: "Empresa de Seguros",
-    category: "SERVICIOS FINANCIEROS",
-    result: "Duplicaron cierres con flujo automatizado por WhatsApp.",
-    icon: <Shield className="w-8 h-8" />,
-    metrics: [
-      { label: "Conversión", value: "+100%" },
-      { label: "Tiempo respuesta", value: "-70%" },
-    ],
-  },
-  {
-    title: "Servicios Legales",
-    category: "CONSULTORÍA",
-    result: "Centralizaron expedientes y contactos, mejorando respuesta al cliente en un 60%.",
-    icon: <Award className="w-8 h-8" />,
-    metrics: [
-      { label: "Tiempo respuesta", value: "+60%" },
-      { label: "Organización", value: "+85%" },
-    ],
-  },
-]
-
-const beforeAfter = {
-  before: [
-    { text: "Clientes olvidados o duplicados", icon: <XCircle className="w-5 h-5 text-red-400" /> },
-    { text: "Sin trazabilidad ni historial", icon: <XCircle className="w-5 h-5 text-red-400" /> },
-    { text: "Seguimiento manual y lento", icon: <XCircle className="w-5 h-5 text-red-400" /> },
-    { text: "Pérdida de oportunidades", icon: <XCircle className="w-5 h-5 text-red-400" /> },
-  ],
-  after: [
-    { text: "Centralización total del cliente", icon: <CheckCircle className="w-5 h-5 text-green-400" /> },
-    { text: "Flujos automatizados de atención", icon: <CheckCircle className="w-5 h-5 text-green-400" /> },
-    { text: "Medición y mejora continua", icon: <CheckCircle className="w-5 h-5 text-green-400" /> },
-    { text: "Crecimiento sostenible", icon: <CheckCircle className="w-5 h-5 text-green-400" /> },
-  ],
-}
 
 export default function ClientesPage() {
   return (
@@ -127,15 +46,15 @@ export default function ClientesPage() {
               necesitan.
             </p>
 
-           
+
           </div>
 
-            {/* Scroll indicator */}
-           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-              <div className="w-6 h-10 border-2 border-[#d4af37]/50 rounded-full flex justify-center">
-                <div className="w-1 h-3 bg-[#d4af37] rounded-full mt-2 animate-pulse"></div>
-              </div>
+          {/* Scroll indicator */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div className="w-6 h-10 border-2 border-[#d4af37]/50 rounded-full flex justify-center">
+              <div className="w-1 h-3 bg-[#d4af37] rounded-full mt-2 animate-pulse"></div>
             </div>
+          </div>
         </section>
 
         {/* Customer Cycle Section */}
