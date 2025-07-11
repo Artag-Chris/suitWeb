@@ -127,7 +127,7 @@ function Navbar() {
       <div ref={heroObserverRef} className="absolute top-0 h-[50vh] w-full pointer-events-none" />
 
       {/* Navbar Superior */}
-      <header ref={topNavRef} className="border-b border-[#4B5563] bg-[#0F0F13] fixed w-full z-50">
+      <header ref={topNavRef} className="border-b  fixed w-full z-50">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-3 md:py-5">
           <div className="flex items-center justify-between">
             {/* Logo */}
