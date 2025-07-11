@@ -1,14 +1,12 @@
 "use client"
 import { ArrowRight } from "lucide-react"
-import { useRef, useEffect, Suspense } from "react"
-import type { Connection, Particle } from "@/interfaces"
+import { useRef, Suspense } from "react"
 import InteractiveVideoManager from "../shared/video/InteractiveVideoManager"
 import ParticleBackground from "../microComponents/ParticleBackground"
 
 function Hero() {
   const heroRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
-
 
   return (
     <>
