@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState } from "react"
 import {
   FileText,
   Download,
@@ -9,15 +9,9 @@ import {
   Clock,
   Users,
   TrendingUp,
-  Shield,
-  Zap,
-  Cloud,
-  Cpu,
-  BarChart3,
   CheckCircle,
   ArrowRight,
   Star,
-  Award,
   BookOpen,
   Target,
 } from "lucide-react"
