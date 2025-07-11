@@ -216,7 +216,7 @@ export const DropdownMenu = (props: MenuItemProps) => {
                         <Link
                           href={item.href}
                           className="flex items-center text-gray-400 hover:text-white transition-colors py-2 group"
-                          onClick={() => setTimeout(() => setActiveMenu(null), 100)}
+                          onClick={() =>  setActiveMenu(null)}
                         >
                           {item.icon && <span className="mr-3 group-hover:text-purple-500">{item.icon}</span>}
                           <span className="flex-1">{item.label}</span>
@@ -235,24 +235,24 @@ export const DropdownMenu = (props: MenuItemProps) => {
               })}
             </div>
           )}
-
           {featuredItems && (
             <div className="mt-8 pt-6 border-t border-gray-800">
               <h4 className="text-gray-300 font-semibold mb-4">FEATURED</h4>
               <div className="grid grid-cols-2 gap-4">
                 {featuredItems.map((featured, index) => (
-                  <a
+                  <Link
                     key={index}
                     href={featured.href || '#'}
                     className="bg-gray-900 p-4 rounded-lg hover:bg-gray-800 transition-colors"
                   >
                     <div className="text-xs text-purple-500 mb-1">{featured.category}</div>
                     <div className="font-medium text-white">{featured.title}</div>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
           )}
+
         </div>
       </div>
     </div>

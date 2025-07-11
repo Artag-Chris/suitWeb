@@ -4,6 +4,7 @@ import type { MenuKey, MenuRefs } from "@/interfaces"
 import gsap from "gsap"
 import NavLinks from "../microComponents/NavLinks"
 import BottomNavbar from "./BottomNavbar"
+import Link from "next/link"
 
 function Navbar() {
   const [activeMenu, setActiveMenu] = useState<MenuKey>(null)
@@ -131,15 +132,10 @@ function Navbar() {
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-3 md:py-5">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <div
-              className="flex flex-col items-center cursor-pointer"
-              onClick={() => {
-                window.location.href = "/"
-              }}
-            >
+            <Link href="/">
               <span className="text-xl md:text-2xl font-light tracking-wider text-white">FINOVA</span>
               <span className="text-xs md:text-sm font-bold tracking-wider text-[#d4af37] ml-1">Desarrollo</span>
-            </div>
+            </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden md:block">
