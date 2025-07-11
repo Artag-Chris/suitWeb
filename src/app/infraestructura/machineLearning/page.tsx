@@ -1,10 +1,9 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Play, RotateCcw, Brain, TrendingUp, Shield, Target, Zap, Users, BarChart3, Clock, Award } from "lucide-react"
+import { Play, RotateCcw, Brain, TrendingUp, Target, Zap, Clock, Award } from "lucide-react"
 import ParticleBackground from "@/components/microComponents/ParticleBackground"
-
-
+import { mlUseCases, techStackMachineLearning, successCasesMachineLearning } from "@/dataSections"
 
 const MachineLearningPage = () => {
   // Real-time metrics state
@@ -162,109 +161,6 @@ const MachineLearningPage = () => {
     calculatePerformance()
   }, [modelConfig])
 
-  const mlUseCases = [
-    {
-      title: "Detección de Fraude",
-      description: "Modelos que identifican transacciones sospechosas en tiempo real con 99.2% de precisión.",
-      icon: Shield,
-      gradient: "from-red-500 to-red-600",
-      metrics: "+99.2% precisión",
-    },
-    {
-      title: "Predicción de Demanda",
-      description: "Algoritmos que anticipan necesidades de stock y personal basados en patrones históricos.",
-      icon: TrendingUp,
-      gradient: "from-blue-500 to-blue-600",
-      metrics: "+85% precisión",
-    },
-    {
-      title: "Clasificación Automática",
-      description: "Procesamiento inteligente de tickets, correos y documentos sin intervención humana.",
-      icon: Target,
-      gradient: "from-green-500 to-green-600",
-      metrics: "+92% automatización",
-    },
-    {
-      title: "Recomendaciones Inteligentes",
-      description: "Sistemas personalizados que aumentan conversión y engagement del usuario.",
-      icon: Users,
-      gradient: "from-purple-500 to-purple-600",
-      metrics: "+45% conversión",
-    },
-    {
-      title: "Análisis de Sentimientos",
-      description: "Evaluación automática de opiniones para medir percepción y satisfacción.",
-      icon: BarChart3,
-      gradient: "from-yellow-500 to-yellow-600",
-      metrics: "+88% precisión",
-    },
-    {
-      title: "Optimización Dinámica",
-      description: "Algoritmos que ajustan precios, rutas y procesos según condiciones en tiempo real.",
-      icon: Zap,
-      gradient: "from-indigo-500 to-indigo-600",
-      metrics: "+65% eficiencia",
-    },
-  ]
-
-  const techStack = [
-    { name: "Python", adoption: 95, rating: "Excelente" },
-    { name: "scikit-learn", adoption: 88, rating: "Excelente" },
-    { name: "TensorFlow", adoption: 82, rating: "Muy Bueno" },
-    { name: "PyTorch", adoption: 79, rating: "Muy Bueno" },
-    { name: "Pandas", adoption: 92, rating: "Excelente" },
-    { name: "Jupyter", adoption: 85, rating: "Muy Bueno" },
-    { name: "Google Vertex AI", adoption: 72, rating: "Bueno" },
-    { name: "AWS Sagemaker", adoption: 68, rating: "Bueno" },
-  ]
-
-  const successCases = [
-    {
-      company: "Banca Digital",
-      sector: "FinTech • 500K+ transacciones/día",
-      challenge: "Detección de fraude manual",
-      solution: "Modelo de ML para detección automática",
-      results: {
-        fraudReduction: "-80%",
-        accuracy: "99.2%",
-        satisfaction: "4.8/5",
-        processingTime: "-95%",
-      },
-      technologies: ["Python", "TensorFlow", "AWS", "PostgreSQL"],
-      duration: "5 meses",
-      challenges: ["Datos desbalanceados", "Falsos positivos", "Tiempo real"],
-    },
-    {
-      company: "Comercio Electrónico",
-      sector: "E-commerce • 2M+ productos",
-      challenge: "Recomendaciones genéricas",
-      solution: "Motor de recomendación personalizado",
-      results: {
-        ticketIncrease: "+45%",
-        engagement: "+120%",
-        satisfaction: "4.6/5",
-        conversionRate: "+85%",
-      },
-      technologies: ["PyTorch", "Redis", "MongoDB", "Docker"],
-      duration: "4 meses",
-      challenges: ["Cold start", "Escalabilidad", "Personalización"],
-    },
-    {
-      company: "Logística Inteligente",
-      sector: "Logistics • 50K+ rutas/día",
-      challenge: "Optimización manual de rutas",
-      solution: "Algoritmos predictivos de optimización",
-      results: {
-        costReduction: "-35%",
-        efficiency: "+80%",
-        satisfaction: "4.4/5",
-        fuelSavings: "-40%",
-      },
-      technologies: ["scikit-learn", "Google Maps API", "Python", "BigQuery"],
-      duration: "6 meses",
-      challenges: ["Tráfico variable", "Múltiples restricciones", "Tiempo real"],
-    },
-  ]
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
@@ -598,7 +494,7 @@ const MachineLearningPage = () => {
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {techStack.map((tech, index) => (
+            {techStackMachineLearning.map((tech, index) => (
               <div key={index} className="group">
                 <div className="bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-[#d4af37]/20 rounded-xl p-6 hover:border-[#d4af37]/40 transition-all duration-300 hover:scale-105">
                   <div className="flex justify-between items-start mb-4">
@@ -643,7 +539,7 @@ const MachineLearningPage = () => {
           </h2>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            {successCases.map((case_, index) => (
+            {successCasesMachineLearning.map((case_, index) => (
               <div key={index} className="group">
                 <div className="bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-sm border border-[#d4af37]/20 rounded-2xl p-6 hover:border-[#d4af37]/40 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#d4af37]/10 h-full">
                   {/* Header */}
