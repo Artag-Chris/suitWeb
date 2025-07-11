@@ -5,7 +5,6 @@ import { Play, RotateCcw, Code, Server } from "lucide-react"
 import ParticleBackground from "@/components/microComponents/ParticleBackground"
 import { optimizationStepsData, factoresCostoData, beneficiosData, tecnologiasData, casosData } from "@/dataSections"
 
-
 const SaaSPage = () => {
   // Performance Optimizer State
   const [isOptimizing, setIsOptimizing] = useState(false)
@@ -44,7 +43,7 @@ const SaaSPage = () => {
   }
 
   // Calculate cost analysis
-  const costAnalysis:any = {
+  const costAnalysis: any = {
     current: Math.round(currentUsers * (saasType === "B2B" ? 2.4 : saasType === "B2C" ? 1.8 : 3.2)),
     optimized: Math.round(currentUsers * (saasType === "B2B" ? 1.44 : saasType === "B2C" ? 1.08 : 1.92)),
   }
@@ -153,13 +152,12 @@ const SaaSPage = () => {
                       >
                         <div className="flex items-center gap-3">
                           <div
-                            className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
-                              optimizationProgress > (index * 20)
+                            className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${optimizationProgress > (index * 20)
                                 ? "bg-green-500 text-black"
                                 : isOptimizing && optimizationProgress >= index * 20
                                   ? "bg-yellow-500 text-black animate-pulse"
                                   : "bg-gray-600 text-gray-300"
-                            }`}
+                              }`}
                           >
                             {index + 1}
                           </div>
@@ -169,13 +167,12 @@ const SaaSPage = () => {
                           </div>
                         </div>
                         <div
-                          className={`px-2 py-1 text-xs ${
-                            step.risk === "high"
+                          className={`px-2 py-1 text-xs ${step.risk === "high"
                               ? "bg-red-900/30 text-red-400"
                               : step.risk === "medium"
                                 ? "bg-yellow-900/30 text-yellow-400"
                                 : "bg-green-900/30 text-green-400"
-                          }`}
+                            }`}
                         >
                           {step.risk === "high" ? "Alto Riesgo" : step.risk === "medium" ? "Riesgo Medio" : "Bajo Riesgo"}
                         </div>
