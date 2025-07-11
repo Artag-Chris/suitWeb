@@ -16,6 +16,10 @@ export default function Page() {
     <>
       <ParticleBackground />
       <div className="relative z-10 min-h-screen text-white font-sans">
+        <div
+          id="navbar-observer-target"
+          className="absolute top-0 h-[30vh] w-full pointer-events-none"
+        />
         {/* Hero Section */}
         <section className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
           {/* Efecto de luz pulsante */}
@@ -50,12 +54,12 @@ export default function Page() {
               </p>
             </div>
           </div>
-           {/* Scroll indicator */}
+          {/* Scroll indicator */}
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-              <div className="w-6 h-10 border-2 border-[#d4af37]/50 rounded-full flex justify-center">
-                <div className="w-1 h-3 bg-[#d4af37] rounded-full mt-2 animate-pulse"></div>
-              </div>
+            <div className="w-6 h-10 border-2 border-[#d4af37]/50 rounded-full flex justify-center">
+              <div className="w-1 h-3 bg-[#d4af37] rounded-full mt-2 animate-pulse"></div>
             </div>
+          </div>
         </section>
 
         {/* Benefits Section */}

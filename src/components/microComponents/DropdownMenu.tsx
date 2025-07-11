@@ -216,7 +216,7 @@ export const DropdownMenu = (props: MenuItemProps) => {
                         <Link
                           href={item.href}
                           className="flex items-center text-gray-400 hover:text-white transition-colors py-2 group"
-                          onClick={() =>  setActiveMenu(null)}
+                          onClick={() => setTimeout(() => setActiveMenu(null), 100)}
                         >
                           {item.icon && <span className="mr-3 group-hover:text-purple-500">{item.icon}</span>}
                           <span className="flex-1">{item.label}</span>

@@ -5,8 +5,10 @@ import gsap from "gsap"
 import NavLinks from "../microComponents/NavLinks"
 import BottomNavbar from "./BottomNavbar"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 function Navbar() {
+  const pathname = usePathname()
   const [activeMenu, setActiveMenu] = useState<MenuKey>(null)
   const [isMobile, setIsMobile] = useState(false)
   const [isBottomNavVisible, setIsBottomNavVisible] = useState(false)
@@ -14,7 +16,9 @@ function Navbar() {
   const closeTimerRef = useRef<NodeJS.Timeout | null>(null)
   const topNavRef = useRef<HTMLDivElement>(null)
   const bottomNavRef = useRef<HTMLDivElement>(null)
-  const heroObserverRef = useRef<HTMLDivElement>(null)
+  
+  // Nuevo: Buscamos el elemento observador en cada página
+  const observerElementRef = useRef<HTMLElement | null>(null)
 
   // Referencias con tipado compatible con null
   const menuRefs: MenuRefs = {
@@ -34,45 +38,53 @@ function Navbar() {
     const checkMobile = () => {
       const mobile = window.innerWidth < 768
       setIsMobile(mobile)
-      // En móvil, siempre mostrar navbar inferior
       if (mobile) {
         setIsBottomNavVisible(true)
+      } else if (pathname !== "/") {
+        setIsBottomNavVisible(false)
       }
     }
 
     checkMobile()
     window.addEventListener("resize", checkMobile)
 
-    // Configurar Intersection Observer para el hero
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (isMobile) return
-        entries.forEach((entry) => {
-          if (entry.intersectionRatio < 0.5) {
-            animateNavToBottom()
-          } else {
-            animateNavToTop()
-          }
-        })
-      },
-      { threshold: 0.5 },
-    )
-
-    if (heroObserverRef.current) {
-      observer.observe(heroObserverRef.current)
-    }
-
     return () => {
       window.removeEventListener("resize", checkMobile)
       if (closeTimerRef.current) clearTimeout(closeTimerRef.current)
-      observer.disconnect()
     }
-  }, [isMobile])
+  }, [pathname])
+
+  useEffect(() => {
+    if (isMobile) return
+
+    // Buscar el elemento observador en la página actual
+    observerElementRef.current = document.getElementById("navbar-observer-target")
+
+    if (observerElementRef.current) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.intersectionRatio < 0.5) {
+              animateNavToBottom()
+            } else {
+              animateNavToTop()
+            }
+          })
+        },
+        { threshold: 0.5 }
+      )
+
+      observer.observe(observerElementRef.current)
+
+      return () => {
+        observer.disconnect()
+      }
+    }
+  }, [isMobile, pathname])
 
   const animateNavToBottom = () => {
-    if (!topNavRef.current || isMobile) return
+    if (!topNavRef.current || isMobile || isBottomNavVisible) return
 
-    // Animación para desaparecer navbar superior
     gsap.to(topNavRef.current, {
       opacity: 0,
       y: -20,
@@ -85,9 +97,8 @@ function Navbar() {
   }
 
   const animateNavToTop = () => {
-    if (isMobile) return
+    if (isMobile || !isBottomNavVisible) return
 
-    // Animación para aparecer navbar superior
     if (topNavRef.current) {
       gsap.to(topNavRef.current, {
         opacity: 1,
@@ -124,15 +135,12 @@ function Navbar() {
 
   return (
     <>
-      {/* Punto de referencia - DEBE ESTAR DENTRO DEL HERO */}
-      <div ref={heroObserverRef} className="absolute top-0 h-[50vh] w-full pointer-events-none" />
-
       {/* Navbar Superior */}
-      <header ref={topNavRef} className="border-b  fixed w-full z-50">
+      <header ref={topNavRef} className="border-b fixed w-full z-50 bg-[#0F0F13]">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-3 md:py-5">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/">
+            <Link href="/" className="flex items-center">
               <span className="text-xl md:text-2xl font-light tracking-wider text-white">FINOVA</span>
               <span className="text-xs md:text-sm font-bold tracking-wider text-[#d4af37] ml-1">Desarrollo</span>
             </Link>
@@ -166,6 +174,7 @@ function Navbar() {
             <button
               className="md:hidden flex flex-col items-center justify-center w-8 h-8 space-y-1.5"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
             >
               <div
                 className={`w-6 h-0.5 bg-[#d4af37] transition-all duration-300 ${isMobileMenuOpen ? "rotate-45 translate-y-2" : ""}`}
@@ -185,30 +194,34 @@ function Navbar() {
               <div className="px-4 py-6 space-y-4">
                 {/* Mobile Navigation Links */}
                 <div className="space-y-3">
-                  <button
+                  <Link
+                    href="/productos"
                     className="block w-full text-left text-white hover:text-[#d4af37] transition-colors py-2 border-b border-[#4B5563]/30"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    Productos +
-                  </button>
-                  <button
+                    Productos
+                  </Link>
+                  <Link
+                    href="/soluciones"
                     className="block w-full text-left text-white hover:text-[#d4af37] transition-colors py-2 border-b border-[#4B5563]/30"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    Soluciones +
-                  </button>
-                  <button
+                    Soluciones
+                  </Link>
+                  <Link
+                    href="/recursos"
                     className="block w-full text-left text-white hover:text-[#d4af37] transition-colors py-2 border-b border-[#4B5563]/30"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    Recursos +
-                  </button>
-                  <button
+                    Recursos
+                  </Link>
+                  <Link
+                    href="/servicios"
                     className="block w-full text-left text-white hover:text-[#d4af37] transition-colors py-2"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Servicios
-                  </button>
+                  </Link>
                 </div>
 
                 {/* Mobile Action Buttons */}
@@ -232,7 +245,7 @@ function Navbar() {
         </div>
       </header>
 
-      {/* Navbar Inferior - Versión compacta con DropdownMenu */}
+      {/* Navbar Inferior */}
       {isBottomNavVisible && (
         <BottomNavbar
           bottomNavRef={bottomNavRef}
