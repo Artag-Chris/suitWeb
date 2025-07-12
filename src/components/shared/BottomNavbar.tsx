@@ -278,7 +278,7 @@ function BottomNavbar({
                     columns={isMobile ? 1 : 3}
                     activeMenu={activeMenu}
                     setActiveMenu={setActiveMenu}
-                    menuRef={bottomMenuRefs.products}
+                    menuRef={bottomMenuRefs.Productos} // CORRECCIÓN: Usar ref específica
                     menuTransition={menuTransition}
                     animationDuration={animationDuration}
                     closeTimerRef={closeTimerRef}
@@ -298,11 +298,13 @@ function BottomNavbar({
                           label: "Cloud Híbrida",
                           icon: <Cloud className="w-4 h-4 sm:w-5 sm:h-5 text-purple-500" />,
                           description: "Implementación multi-nube con alta disponibilidad",
+                          href:"/infraestructura/cloudhibrida"
                         },
                         {
                           label: "DevOps & CI/CD",
                           icon: <MoveDiagonal className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-500" />,
                           description: "Automatización de despliegues y pipelines",
+                          href:"/infraestructura/devops"
                         },
                       ],
                     },
@@ -313,11 +315,13 @@ function BottomNavbar({
                           label: "Migración Legacy",
                           icon: <RefreshCw className="w-4 h-4 sm:w-5 sm:h-5 text-red-500" />,
                           description: "Actualización de sistemas heredados",
+                          href:"/infraestructura/migracionLegacy"
                         },
                         {
                           label: "Optimización SaaS",
                           icon: <BarChart2 className="w-4 h-4 sm:w-5 sm:h-5 text-teal-500" />,
                           description: "Mejora de rendimiento en aplicaciones cloud",
+                          href:"/infraestructura/saasOptimizacion"
                         },
                       ],
                     },
@@ -328,11 +332,13 @@ function BottomNavbar({
                           label: "Análisis de Datos",
                           icon: <PieChart className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-500" />,
                           description: "Plataformas de business intelligence",
+                          href:"/infraestructura/analisisDatos"
                         },
                         {
                           label: "Machine Learning",
                           icon: <Cpu className="w-4 h-4 sm:w-5 sm:h-5 text-pink-500" />,
                           description: "Modelos predictivos para toma de decisiones",
+                          href:"/infraestructura/machineLearning"
                         },
                       ],
                     },
@@ -344,19 +350,19 @@ function BottomNavbar({
                           {
                             category: "CASO DE ESTUDIO",
                             title: "Migración exitosa a microservicios para empresa de telecomunicaciones",
-                            href: "/casos/telecom-microservicios",
+                            href: "/webinar/microservicios"
                           },
                           {
                             category: "WEBINAR",
                             title: "Mejores prácticas en implementación de CI/CD",
-                            href: "/webinars/cicd-best-practices",
+                            href: "/webinar/cicd"
                           },
                         ]
                       : undefined
                   }
                   activeMenu={activeMenu}
                   setActiveMenu={setActiveMenu}
-                  menuRef={bottomMenuRefs.products}
+                  menuRef={bottomMenuRefs.Soluciones} // CORRECCIÓN: Usar ref específica
                   menuTransition={menuTransition}
                   animationDuration={animationDuration}
                   closeTimerRef={closeTimerRef}
@@ -375,6 +381,7 @@ function BottomNavbar({
                           label: "Whitepapers",
                           icon: <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500" />,
                           description: "Documentos técnicos profundos",
+                          href: "/webinar/whitepapers"
                         },
                         {
                           label: "Casos de Estudio",
@@ -433,7 +440,7 @@ function BottomNavbar({
                   }
                   activeMenu={activeMenu}
                   setActiveMenu={setActiveMenu}
-                  menuRef={bottomMenuRefs.products}
+                  menuRef={bottomMenuRefs.Recursos} // CORRECCIÓN: Usar ref específica
                   menuTransition={menuTransition}
                   animationDuration={animationDuration}
                   closeTimerRef={closeTimerRef}
