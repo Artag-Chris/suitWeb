@@ -168,6 +168,10 @@ const MachineLearningPage = () => {
 
       {/* Hero Section */}
       <section className="relative z-10 min-h-screen flex items-center justify-center px-6">
+          <div
+          id="navbar-observer-target"
+          className="absolute top-0 h-[50vh] w-full pointer-events-none"
+        />
         <div className="max-w-6xl mx-auto text-center">
           {/* Mission Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#d4af37]/30 bg-black/20 backdrop-blur-sm mb-8">

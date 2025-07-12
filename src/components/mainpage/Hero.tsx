@@ -11,9 +11,13 @@ function Hero() {
   return (
     <>
       <section
-        ref={heroRef}
+
         className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black"
       >
+        <div
+          id="navbar-observer-target"
+          className="absolute top-0 h-[50vh] w-full pointer-events-none"
+        />
         <ParticleBackground />
         {/* Punto de referencia PARA EL NAVBAR */}
         <div className="absolute top-0 h-[50vh] w-full pointer-events-none z-30" />

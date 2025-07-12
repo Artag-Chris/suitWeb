@@ -134,6 +134,10 @@ export default function AnalisisDatosPage() {
 
       {/* Hero Section */}
       <section className="relative z-10 pt-32 pb-20 px-6 text-center">
+          <div
+          id="navbar-observer-target"
+          className="absolute top-0 h-[50vh] w-full pointer-events-none"
+        />
         <div className="max-w-6xl mx-auto">
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#d4af37] bg-black/20 backdrop-blur-sm mb-8 hover:border-[#d4af37]/50 transition-all duration-300">
             <BarChart3 className="w-5 h-5 text-[#d4af37]" />

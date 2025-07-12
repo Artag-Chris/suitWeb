@@ -18,7 +18,7 @@ export default function Page() {
       <div className="relative z-10 min-h-screen text-white font-sans">
         <div
           id="navbar-observer-target"
-          className="absolute top-0 h-[30vh] w-full pointer-events-none"
+          className="absolute top-0 h-[50vh] w-full pointer-events-none"
         />
         {/* Hero Section */}
         <section className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden">

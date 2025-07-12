@@ -69,6 +69,10 @@ const SaaSPage = () => {
 
         {/* HERO */}
         <section className="relative py-32 px-8 text-center">
+            <div
+          id="navbar-observer-target"
+          className="absolute top-0 h-[50vh] w-full pointer-events-none"
+        />
           <div className="max-w-5xl mx-auto">
             <div className="inline-flex items-center gap-2 bg-yellow-600/10 border border-yellow-600/30 px-4 py-2 rounded-full mb-6">
               <Code className="w-4 h-4 text-yellow-600" />

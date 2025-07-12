@@ -60,6 +60,10 @@ export default function WhitepapersPage() {
       <div className="relative z-10 min-h-screen text-white font-sans overflow-hidden">
         {/* Hero Section */}
         <section className="min-h-screen flex items-center justify-center px-6 relative">
+            <div
+          id="navbar-observer-target"
+          className="absolute top-0 h-[50vh] w-full pointer-events-none"
+        />
           {/* Efecto de luz pulsante */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
             <div className="animate-pulse w-96 h-96 rounded-full bg-gradient-to-r from-[#d4af37]/30 to-purple-500/20 blur-[100px] opacity-40"></div>

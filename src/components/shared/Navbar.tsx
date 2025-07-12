@@ -17,9 +17,9 @@ function Navbar() {
   const topNavRef = useRef<HTMLDivElement>(null)
   const bottomNavRef = useRef<HTMLDivElement>(null)
   
-  // Nuevo: Buscamos el elemento observador en cada página
-  const observerElementRef = useRef<HTMLElement | null>(null)
-
+  // Nuevo estado para controlar la visibilidad del top navbar
+  const [isTopNavVisible, setIsTopNavVisible] = useState(true)
+  
   // Referencias con tipado compatible con null
   const menuRefs: MenuRefs = {
     Productos: useRef<HTMLDivElement>(null),
@@ -40,8 +40,13 @@ function Navbar() {
       setIsMobile(mobile)
       if (mobile) {
         setIsBottomNavVisible(true)
-      } else if (pathname !== "/") {
-        setIsBottomNavVisible(false)
+        setIsTopNavVisible(false)
+      } else {
+        // Al cambiar a desktop, asegurar que top navbar está visible
+        setIsTopNavVisible(true)
+        if (topNavRef.current) {
+          gsap.set(topNavRef.current, { opacity: 1, y: 0 })
+        }
       }
     }
 
@@ -58,47 +63,43 @@ function Navbar() {
     if (isMobile) return
 
     // Buscar el elemento observador en la página actual
-    observerElementRef.current = document.getElementById("navbar-observer-target")
+    const observerElement = document.getElementById("navbar-observer-target")
 
-    if (observerElementRef.current) {
+    if (observerElement) {
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
-            if (entry.intersectionRatio < 0.5) {
-              animateNavToBottom()
-            } else {
-              animateNavToTop()
+            // Nuevo: Usar una lógica más precisa para determinar la visibilidad
+            if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+              // Elemento visible - mostrar top navbar
+              showTopNav()
+            } else if (!entry.isIntersecting || entry.intersectionRatio < 0.5) {
+              // Elemento no visible - mostrar bottom navbar
+              showBottomNav()
             }
           })
         },
-        { threshold: 0.5 }
+        { threshold: [0.5] } // Umbral más preciso
       )
 
-      observer.observe(observerElementRef.current)
+      observer.observe(observerElement)
 
       return () => {
         observer.disconnect()
       }
+    } else {
+      // Si no hay elemento observador, mostrar siempre top navbar
+      showTopNav()
     }
   }, [isMobile, pathname])
 
-  const animateNavToBottom = () => {
-    if (!topNavRef.current || isMobile || isBottomNavVisible) return
-
-    gsap.to(topNavRef.current, {
-      opacity: 0,
-      y: -20,
-      duration: 0.5,
-      ease: "power2.out",
-      onComplete: () => {
-        setIsBottomNavVisible(true)
-      },
-    })
-  }
-
-  const animateNavToTop = () => {
-    if (isMobile || !isBottomNavVisible) return
-
+  // Función para mostrar el top navbar
+  const showTopNav = () => {
+    if (isMobile) return
+    
+    setIsBottomNavVisible(false)
+    setIsTopNavVisible(true)
+    
     if (topNavRef.current) {
       gsap.to(topNavRef.current, {
         opacity: 1,
@@ -107,8 +108,33 @@ function Navbar() {
         ease: "power2.out",
       })
     }
-    setIsBottomNavVisible(false)
   }
+
+  // Función para mostrar el bottom navbar
+  const showBottomNav = () => {
+    if (isMobile) return
+    
+    setIsTopNavVisible(false)
+    
+    if (topNavRef.current) {
+      gsap.to(topNavRef.current, {
+        opacity: 0,
+        y: -20,
+        duration: 0.5,
+        ease: "power2.out",
+        onComplete: () => {
+          setIsBottomNavVisible(true)
+        },
+      })
+    }
+  }
+
+  // Al cambiar de página, resetear a top navbar
+  useEffect(() => {
+    setActiveMenu(null)
+    setIsMobileMenuOpen(false)
+    showTopNav()
+  }, [pathname])
 
   // Cerrar menús al hacer clic fuera
   useEffect(() => {
@@ -135,8 +161,12 @@ function Navbar() {
 
   return (
     <>
-      {/* Navbar Superior */}
-      <header ref={topNavRef} className="border-b fixed w-full z-50 bg-[#0F0F13]">
+      {/* Navbar Superior - Ahora controlado por isTopNavVisible */}
+      <header 
+        ref={topNavRef} 
+        className="border-b fixed w-full z-50 bg-[#0F0F13]"
+        style={{ display: isTopNavVisible ? "block" : "none" }}
+      >
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-3 md:py-5">
           <div className="flex items-center justify-between">
             {/* Logo */}
