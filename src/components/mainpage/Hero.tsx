@@ -5,7 +5,6 @@ import InteractiveVideoManager from "../shared/video/InteractiveVideoManager"
 import ParticleBackground from "../microComponents/ParticleBackground"
 
 function Hero() {
-  const heroRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   return (
