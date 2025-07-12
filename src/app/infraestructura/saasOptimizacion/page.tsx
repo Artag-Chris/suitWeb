@@ -74,12 +74,12 @@ const SaaSPage = () => {
           className="absolute top-0 h-[50vh] w-full pointer-events-none"
         />
           <div className="max-w-5xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-yellow-600/10 border border-yellow-600/30 px-4 py-2 rounded-full mb-6">
-              <Code className="w-4 h-4 text-yellow-600" />
-              <span className="text-yellow-600 text-sm font-medium">OPTIMIZACIÓN SAAS</span>
+            <div className="inline-flex items-center gap-2 bg-[#d4af37]/10 border border-[#d4af37]/30 px-4 py-2 rounded-full mb-6">
+              <Code className="w-4 h-4 text-[#d4af37]" />
+              <span className="text-[#d4af37] text-sm font-medium">OPTIMIZACIÓN SAAS</span>
             </div>
             <h1 className="text-4xl font-extrabold leading-tight mb-6">
-              SaaS que <span className="text-yellow-400">rinde</span>, crece y se disfruta
+              SaaS que <span className="text-[#d4af37]">rinde</span>, crece y se disfruta
             </h1>
             <p className="text-gray-400 text-lg max-w-3xl mx-auto mb-12">
               Optimizamos tu plataforma como un producto: más rápida, más barata de operar y lista para escalar con tu
@@ -87,20 +87,20 @@ const SaaSPage = () => {
             </p>
             {/* Real-time metrics in hero */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-              <div className=" border border-yellow-600/20 p-4 hover:bg-[#1e1e1e] transition">
-                <div className="text-2xl font-bold text-yellow-400">{realtimeMetrics.activeUsers}</div>
+              <div className=" border border-[#d4af37]/20 p-4 hover:bg-[#1e1e1e] transition">
+                <div className="text-2xl font-bold text-[#d4af37]">{realtimeMetrics.activeUsers}</div>
                 <div className="text-sm text-gray-400">Usuarios Activos</div>
               </div>
-              <div className=" border border-yellow-600/20 p-4 hover:bg-[#1e1e1e] transition">
-                <div className="text-2xl font-bold text-yellow-400">{realtimeMetrics.responseTime}ms</div>
+              <div className=" border border-[#d4af37]/20 p-4 hover:bg-[#1e1e1e] transition">
+                <div className="text-2xl font-bold text-[#d4af37]">{realtimeMetrics.responseTime}ms</div>
                 <div className="text-sm text-gray-400">Tiempo Respuesta</div>
               </div>
-              <div className=" border border-yellow-600/20 p-4 hover:bg-[#1e1e1e] transition">
-                <div className="text-2xl font-bold text-yellow-400">{realtimeMetrics.uptime.toFixed(2)}%</div>
+              <div className=" border border-[#d4af37]/20 p-4 hover:bg-[#1e1e1e] transition">
+                <div className="text-2xl font-bold text-[#d4af37]">{realtimeMetrics.uptime.toFixed(2)}%</div>
                 <div className="text-sm text-gray-400">Uptime</div>
               </div>
-              <div className=" border border-yellow-600/20 p-4 hover:bg-[#1e1e1e] transition">
-                <div className="text-2xl font-bold text-yellow-400">{realtimeMetrics.retention.toFixed(1)}%</div>
+              <div className=" border border-[#d4af37]/20 p-4 hover:bg-[#1e1e1e] transition">
+                <div className="text-2xl font-bold text-[#d4af37]">{realtimeMetrics.retention.toFixed(1)}%</div>
                 <div className="text-sm text-gray-400">Retención</div>
               </div>
             </div>
@@ -110,7 +110,7 @@ const SaaSPage = () => {
         {/* ¿QUÉ ES OPTIMIZAR UN SAAS? */}
         <section className=" py-20 px-6">
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-2xl font-semibold text-yellow-400 mb-10">¿Qué significa optimizar un SaaS?</h2>
+            <h2 className="text-2xl font-semibold text-[#d4af37] mb-10">¿Qué significa optimizar un SaaS?</h2>
             <p className="text-gray-300 max-w-3xl mx-auto">
               No se trata solo de que funcione. Se trata de que funcione bien: con menos latencia, menos gasto, mejor
               conversión, más retención y código que evoluciona contigo.
@@ -121,24 +121,24 @@ const SaaSPage = () => {
         {/* PERFORMANCE OPTIMIZER SIMULATOR */}
         <section className=" py-20 px-6">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl font-bold text-yellow-400 text-center mb-12">
+            <h2 className="text-2xl font-bold text-[#d4af37] text-center mb-12">
               Simulador de Optimización de Performance
             </h2>
-            <div className=" border border-yellow-600/20 p-8">
+            <div className=" border border-[#d4af37]/20 p-8">
               <div className="flex justify-between items-center mb-8">
                 <h3 className="text-xl font-semibold">SaaS Performance Optimizer</h3>
                 <div className="flex gap-4">
                   <button
                     onClick={runOptimization}
                     disabled={isOptimizing}
-                    className="flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 disabled:bg-gray-600 text-black px-4 py-2 font-semibold transition"
+                    className="flex items-center gap-2 bg-[#d4af37] hover:bg-[#d4af37] disabled:bg-gray-600 text-black px-4 py-2 font-semibold transition"
                   >
                     <Play className="w-4 h-4" />
                     {isOptimizing ? "Optimizando..." : "Ejecutar Optimización"}
                   </button>
                   <button
                     onClick={resetOptimization}
-                    className="flex items-center gap-2 border border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black px-4 py-2 transition"
+                    className="flex items-center gap-2 border border-[#d4af37] text-[#d4af37] hover:bg-[#d4af37] hover:text-black px-4 py-2 transition"
                   >
                     <RotateCcw className="w-4 h-4" />
                     Reset
@@ -152,14 +152,14 @@ const SaaSPage = () => {
                     {optimizationStepsData.map((step, index) => (
                       <div
                         key={index}
-                        className="flex items-center justify-between p-4  border border-yellow-600/10"
+                        className="flex items-center justify-between p-4  border border-[#d4af37]/10"
                       >
                         <div className="flex items-center gap-3">
                           <div
                             className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${optimizationProgress > (index * 20)
                                 ? "bg-green-500 text-black"
                                 : isOptimizing && optimizationProgress >= index * 20
-                                  ? "bg-yellow-500 text-black animate-pulse"
+                                  ? "bg-[#d4af37] text-black animate-pulse"
                                   : "bg-gray-600 text-gray-300"
                               }`}
                           >
@@ -174,7 +174,7 @@ const SaaSPage = () => {
                           className={`px-2 py-1 text-xs ${step.risk === "high"
                               ? "bg-red-900/30 text-red-400"
                               : step.risk === "medium"
-                                ? "bg-yellow-900/30 text-yellow-400"
+                                ? "bg-yellow-900/30 text-[#d4af37]"
                                 : "bg-green-900/30 text-green-400"
                             }`}
                         >
@@ -217,13 +217,13 @@ const SaaSPage = () => {
                     <div className="flex items-center justify-center h-64">
                       {isOptimizing ? (
                         <div className="text-center">
-                          <div className="w-16 h-16 border-4 border-yellow-400 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-                          <div className="text-yellow-400 font-medium">
+                          <div className="w-16 h-16 border-4 border-[#d4af37] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+                          <div className="text-[#d4af37] font-medium">
                             Optimizando sistema... {optimizationProgress}%
                           </div>
                           <div className="w-64 bg-gray-700 h-2 mt-4">
                             <div
-                              className="bg-yellow-400 h-2 transition-all duration-300"
+                              className="bg-[#d4af37] h-2 transition-all duration-300"
                               style={{ width: `${optimizationProgress}%` }}
                             ></div>
                           </div>
@@ -245,10 +245,10 @@ const SaaSPage = () => {
         {/* COST CALCULATOR */}
         <section className=" py-20 px-6">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl font-bold text-yellow-400 text-center mb-12">
+            <h2 className="text-2xl font-bold text-[#d4af37] text-center mb-12">
               Calculadora de Optimización de Costos
             </h2>
-            <div className=" border border-yellow-600/20 p-8">
+            <div className=" border border-[#d4af37]/20 p-8">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div>
                   <h3 className="text-xl font-semibold mb-6 text-white">Configuración de tu SaaS</h3>
@@ -258,7 +258,7 @@ const SaaSPage = () => {
                       <select
                         value={saasType}
                         onChange={(e) => setSaasType(e.target.value)}
-                        className="w-full bg-[#0e0e0e] text-white p-3 border border-yellow-600/20 focus:border-yellow-500"
+                        className="w-full bg-[#0e0e0e] text-white p-3 border border-[#d4af37]/20 focus:border-[#d4af37]"
                       >
                         <option value="B2B">B2B (Business to Business)</option>
                         <option value="B2C">B2C (Business to Consumer)</option>
@@ -283,7 +283,7 @@ const SaaSPage = () => {
                         <span>100K</span>
                       </div>
                     </div>
-                    <div className=" p-4 border border-yellow-600/20">
+                    <div className=" p-4 border border-[#d4af37]/20">
                       <h4 className="text-white font-semibold mb-2">Factores de Costo Incluidos</h4>
                       <div className="text-sm text-gray-300 space-y-1">
                         {factoresCostoData.map((factor, i) => (
@@ -309,15 +309,15 @@ const SaaSPage = () => {
                       <div className="text-3xl font-bold text-white">${costAnalysis.optimized.toLocaleString()}</div>
                       <div className="text-sm text-gray-400">por mes con optimizaciones</div>
                     </div>
-                    <div className="bg-yellow-900/20 p-6 border border-yellow-600/30">
-                      <div className="text-yellow-400 font-semibold mb-2">Ahorro Mensual</div>
+                    <div className="bg-yellow-900/20 p-6 border border-[#d4af37]/30">
+                      <div className="text-[#d4af37] font-semibold mb-2">Ahorro Mensual</div>
                       <div className="text-3xl font-bold text-white">${costAnalysis.savings.toLocaleString()}</div>
                       <div className="text-sm text-gray-400">
                         {Math.round((costAnalysis.savings / costAnalysis.current) * 100)}% de reducción
                       </div>
                     </div>
-                    <div className="bg-[#0e0e0e] p-6 border border-yellow-600/20">
-                      <div className="text-yellow-400 font-semibold mb-2">Proyección Anual</div>
+                    <div className="bg-[#0e0e0e] p-6 border border-[#d4af37]/20">
+                      <div className="text-[#d4af37] font-semibold mb-2">Proyección Anual</div>
                       <div className="text-2xl font-bold text-white">${(costAnalysis.savings * 12).toLocaleString()}</div>
                       <div className="text-sm text-gray-400">ahorro total en 12 meses</div>
                     </div>
@@ -331,10 +331,10 @@ const SaaSPage = () => {
         {/* BENEFICIOS */}
         <section className=" py-20 px-6">
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-2xl font-bold text-yellow-400 mb-14">Beneficios directos para tu producto</h2>
+            <h2 className="text-2xl font-bold text-[#d4af37] mb-14">Beneficios directos para tu producto</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left text-gray-300">
               {beneficiosData.map((item, i) => (
-                <div key={i} className=" p-6 border border-yellow-600/20 hover:bg-[#1e1e1e] transition">
+                <div key={i} className=" p-6 border border-[#d4af37]/20 hover:bg-[#1e1e1e] transition">
                   <h3 className="text-white font-semibold mb-2">{item.title}</h3>
                   <p>{item.desc}</p>
                 </div>
@@ -346,10 +346,10 @@ const SaaSPage = () => {
         {/* STACK TÉCNICO */}
         <section className=" py-20 px-6">
           <div className="max-w-5xl mx-auto text-center">
-            <h2 className="text-2xl font-bold text-yellow-400 mb-10">Tecnologías que optimizamos</h2>
+            <h2 className="text-2xl font-bold text-[#d4af37] mb-10">Tecnologías que optimizamos</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm text-gray-300">
               {tecnologiasData.map((tech, i) => (
-                <div key={i} className=" py-4 px-2 border border-yellow-500/10 hover:bg-[#1e1e1e]">
+                <div key={i} className=" py-4 px-2 border border-[#d4af37]/10 hover:bg-[#1e1e1e]">
                   {tech}
                 </div>
               ))}
@@ -360,10 +360,10 @@ const SaaSPage = () => {
         {/* CASOS DE OPTIMIZACIÓN */}
         <section className=" py-20 px-6">
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-14 text-yellow-400">Casos donde SaaS dejó de sufrir</h2>
+            <h2 className="text-3xl font-bold mb-14 text-[#d4af37]">Casos donde SaaS dejó de sufrir</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left text-gray-300">
               {casosData.map((item, i) => (
-                <div key={i} className="border border-yellow-600/30 p-6 hover: transition">
+                <div key={i} className="border border-[#d4af37]/30 p-6 hover: transition">
                   <h3 className="text-white font-semibold mb-2">{item.empresa}</h3>
                   <p>{item.resultado}</p>
                 </div>
@@ -379,13 +379,13 @@ const SaaSPage = () => {
           <div className="flex justify-center gap-4">
             <a
               href="#contacto"
-              className="bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 font-semibold transition"
+              className="bg-[#d4af37] hover:bg-[#d4af37] text-black px-6 py-3 font-semibold transition"
             >
               Optimizar mi plataforma
             </a>
             <a
               href="/migraciones"
-              className="border border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black px-6 py-3 transition"
+              className="border border-[#d4af37] text-[#d4af37] hover:bg-[#d4af37] hover:text-black px-6 py-3 transition"
             >
               Ver migraciones legacy
             </a>

@@ -16,10 +16,10 @@ function Navbar() {
   const closeTimerRef = useRef<NodeJS.Timeout | null>(null)
   const topNavRef = useRef<HTMLDivElement>(null)
   const bottomNavRef = useRef<HTMLDivElement>(null)
-  
+
   // Nuevo estado para controlar la visibilidad del top navbar
   const [isTopNavVisible, setIsTopNavVisible] = useState(true)
-  
+
   // Referencias con tipado compatible con null
   const menuRefs: MenuRefs = {
     Productos: useRef<HTMLDivElement>(null),
@@ -96,10 +96,10 @@ function Navbar() {
   // Función para mostrar el top navbar
   const showTopNav = () => {
     if (isMobile) return
-    
+
     setIsBottomNavVisible(false)
     setIsTopNavVisible(true)
-    
+
     if (topNavRef.current) {
       gsap.to(topNavRef.current, {
         opacity: 1,
@@ -113,9 +113,9 @@ function Navbar() {
   // Función para mostrar el bottom navbar
   const showBottomNav = () => {
     if (isMobile) return
-    
+
     setIsTopNavVisible(false)
-    
+
     if (topNavRef.current) {
       gsap.to(topNavRef.current, {
         opacity: 0,
@@ -162,18 +162,21 @@ function Navbar() {
   return (
     <>
       {/* Navbar Superior - Ahora controlado por isTopNavVisible */}
-      <header 
-        ref={topNavRef} 
+      <header
+        ref={topNavRef}
         className="border-b fixed w-full z-50 bg-[#0F0F13]"
         style={{ display: isTopNavVisible ? "block" : "none" }}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-3 md:py-5">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center">
-              <span className="text-xl md:text-2xl font-light tracking-wider text-white">FINOVA</span>
-              <span className="text-xs md:text-sm font-bold tracking-wider text-[#d4af37] ml-1">Desarrollo</span>
+            <Link href="/" className="flex flex-col items-center">
+              <div className="flex flex-col items-center">
+                <span className="text-xl md:text-2xl font-light tracking-wider text-white">FINOVA</span>
+                <span className="text-xs md:text-sm font-bold tracking-wider text-[#d4af37] mt-1">Desarrollo</span>
+              </div>
             </Link>
+
 
             {/* Desktop Navigation */}
             <div className="hidden md:block">
@@ -190,11 +193,11 @@ function Navbar() {
 
             {/* Desktop Buttons */}
             <div className="hidden md:flex items-center space-x-4">
-              <button className="group relative px-6 py-3 bg-gradient-to-r from-white to-white text-black rounded-lg font-medium transition-all duration-300 hover:from-slate-700 hover:to-slate-600 hover:scale-105 shadow-md hover:shadow-lg border border-slate-600/50">
+              <button className="group relative px-6 py-3 bg-gradient-to-r from-white to-white text-black rounded-lg font-medium transition-all duration-300 hover:from-[#d4af37] hover:to-[#d4af37] hover:scale-105 shadow-md hover:shadow-lg border border-slate-600/50">
                 <span className="relative z-10">Contáctanos</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-slate-600/20 to-slate-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
-              <button className="group relative px-6 py-3 bg-gradient-to-r from-[#d4af37] to-[#d4af37] text-slate-900 rounded-lg font-medium transition-all duration-300 hover:from-[#d4af37] hover:to-[#d4af37] hover:scale-105 shadow-md hover:shadow-lg">
+              <button className="group relative px-6 py-3 bg-gradient-to-r from-[#d4af37] to-[#d4af37] text-black rounded-lg font-medium transition-all duration-300 hover:from-[#d4af37] hover:to-[#d4af37] hover:scale-105 shadow-md hover:shadow-lg">
                 <span className="relative z-10">Agenda una cita</span>
                 <div className="absolute inset-0 bg-white/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>

@@ -78,7 +78,7 @@ export default function WhitepapersPage() {
 
             <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight leading-tight">
               <span className="text-white">Whitepapers </span>
-              <span className="bg-gradient-to-r from-[#d4af37] via-yellow-400 to-[#d4af37] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#d4af37] via-[#d4af37] to-[#d4af37] bg-clip-text text-transparent">
                 Técnicos
               </span>
               <br />
@@ -125,7 +125,7 @@ export default function WhitepapersPage() {
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 <span className="text-white">¿Qué son los </span>
-                <span className="bg-gradient-to-r from-[#d4af37] to-yellow-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#d4af37] to-[#d4af37] bg-clip-text text-transparent">
                   Whitepapers?
                 </span>
               </h2>
@@ -199,7 +199,7 @@ export default function WhitepapersPage() {
                   onClick={() => setSelectedCategory(category)}
                   className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                     selectedCategory === category
-                      ? "bg-gradient-to-r from-[#d4af37] to-yellow-500 text-black shadow-lg shadow-[#d4af37]/25"
+                      ? "bg-gradient-to-r from-[#d4af37] to-[#d4af37] text-black shadow-lg shadow-[#d4af37]/25"
                       : "bg-slate-800/50 text-gray-300 hover:bg-slate-700/50 border border-[#d4af37]/20 hover:border-[#d4af37]/40"
                   }`}
                 >
@@ -291,7 +291,7 @@ export default function WhitepapersPage() {
                       <button
                         onClick={() => handleDownload(whitepaper)}
                         disabled={downloadingId === whitepaper.id}
-                        className="flex-1 group/btn relative px-4 py-3 bg-gradient-to-r from-[#d4af37] to-yellow-500 text-black font-bold rounded-lg hover:shadow-lg hover:shadow-[#d4af37]/25 transition-all duration-300 transform hover:scale-105 overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="flex-1 group/btn relative px-4 py-3 bg-gradient-to-r from-[#d4af37] to-[#d4af37] text-black font-bold rounded-lg hover:shadow-lg hover:shadow-[#d4af37]/25 transition-all duration-300 transform hover:scale-105 overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         <span className="relative z-10 flex items-center justify-center">
                           {downloadingId === whitepaper.id ? (
@@ -306,7 +306,7 @@ export default function WhitepapersPage() {
                             </>
                           )}
                         </span>
-                        <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-[#d4af37] opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#d4af37] to-[#d4af37] opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
                       </button>
 
                       <button className="px-4 py-3 border-2 border-[#d4af37]/50 text-[#d4af37] font-semibold rounded-lg hover:bg-[#d4af37]/10 transition-all duration-300 flex items-center">
@@ -337,7 +337,7 @@ export default function WhitepapersPage() {
 
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 <span className="text-white">¿Necesitas un whitepaper </span>
-                <span className="bg-gradient-to-r from-[#d4af37] to-yellow-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#d4af37] to-[#d4af37] bg-clip-text text-transparent">
                   personalizado?
                 </span>
               </h2>
@@ -348,12 +348,12 @@ export default function WhitepapersPage() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <button className="group relative px-8 py-4 bg-gradient-to-r from-[#d4af37] to-yellow-500 text-black font-bold rounded-lg text-lg hover:shadow-2xl hover:shadow-[#d4af37]/50 transition-all duration-300 transform hover:scale-105 overflow-hidden">
+                <button className="group relative px-8 py-4 bg-gradient-to-r from-[#d4af37] to-[#d4af37] text-black font-bold rounded-lg text-lg hover:shadow-2xl hover:shadow-[#d4af37]/50 transition-all duration-300 transform hover:scale-105 overflow-hidden">
                   <span className="relative z-10 flex items-center">
                     Solicitar whitepaper personalizado
                     <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                   </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-[#d4af37] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#d4af37] to-[#d4af37] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
 
                 <button className="group px-8 py-4 border-2 border-[#d4af37]/50 text-[#d4af37] font-semibold rounded-lg text-lg hover:bg-[#d4af37]/10 transition-all duration-300 flex items-center">
@@ -365,8 +365,6 @@ export default function WhitepapersPage() {
           </div>
         </section>
       </div>
-
-     
     </>
   )
 }

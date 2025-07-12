@@ -43,7 +43,7 @@ export default function Page() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-              <button className="group relative px-8 py-4 bg-gradient-to-r from-[#d4af37] to-[#b8860b] text-black font-bold rounded-lg text-lg hover:shadow-2xl hover:shadow-[#d4af37]/50 transition-all duration-300 transform hover:scale-105 overflow-hidden">
+              <button className="group relative px-8 py-4 bg-gradient-to-r from-[#d4af37] to-[#d4af37] text-black font-bold rounded-lg text-lg hover:shadow-2xl hover:shadow-[#d4af37]/50 transition-all duration-300 transform hover:scale-105 overflow-hidden">
                 <span className="relative z-10 flex items-center">
                   <Play className="w-5 h-5 mr-2" />
                   Solicita una demostración
@@ -135,7 +135,7 @@ export default function Page() {
 
               <div className="relative z-10 bg-gradient-to-r from-[#0f0f13]/80 to-[#1a1a2e]/80 backdrop-blur-sm border border-[#d4af37]/30 rounded-2xl p-12">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  <span className="bg-gradient-to-r from-[#d4af37] to-[#f1c232] bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#d4af37] to-[#d4af37] bg-clip-text text-transparent">
                     Eleva tu negocio al siguiente nivel
                   </span>
                 </h2>
@@ -149,7 +149,7 @@ export default function Page() {
                     Iniciar transformación digital
                     <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                   </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#f1c232] to-[#d4af37] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#d4af37] to-[#d4af37] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
               </div>
             </div>

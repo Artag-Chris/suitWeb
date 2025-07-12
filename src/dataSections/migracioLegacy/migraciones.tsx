@@ -430,7 +430,7 @@ export const RiskAnalysis = () => {
               currentSystem.riskLevel === "Alto"
                 ? "text-red-400"
                 : currentSystem.riskLevel === "Medio"
-                  ? "text-yellow-400"
+                  ? "text-[#d4af37]"
                   : "text-green-400"
             }`}
           >
@@ -458,7 +458,7 @@ export const RiskAnalysis = () => {
                   risk.level >= 80
                     ? "bg-gradient-to-r from-red-500 to-red-400"
                     : risk.level >= 60
-                      ? "bg-gradient-to-r from-yellow-500 to-yellow-400"
+                      ? "bg-gradient-to-r from-[#d4af37] to-yellow-400"
                       : "bg-gradient-to-r from-green-500 to-green-400"
                 }`}
                 style={{ width: `${risk.level}%` }}

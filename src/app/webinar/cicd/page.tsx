@@ -148,7 +148,7 @@ export default function WebinarCICDPage() {
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
             CI/CD: El Futuro del{" "}
-            <span className="bg-gradient-to-r from-[#d4af37] to-yellow-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#d4af37] to-[#d4af37] bg-clip-text text-transparent">
               Desarrollo Ágil
             </span>
           </h1>
@@ -175,7 +175,7 @@ export default function WebinarCICDPage() {
             ))}
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-gradient-to-r from-[#d4af37] to-yellow-500 text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-[#d4af37]/25 transition-all duration-300 hover:scale-105">
+            <button className="px-8 py-4 bg-gradient-to-r from-[#d4af37] to-[#d4af37] text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-[#d4af37]/25 transition-all duration-300 hover:scale-105">
               <PlayCircle className="w-5 h-5 inline mr-2" />
               Ver Webinar Completo
             </button>
@@ -275,7 +275,7 @@ export default function WebinarCICDPage() {
               <button
                 onClick={runPipeline}
                 disabled={pipelineState.isRunning}
-                className="px-6 py-3 bg-gradient-to-r from-[#d4af37] to-yellow-500 text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-[#d4af37]/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-6 py-3 bg-gradient-to-r from-[#d4af37] to-[#d4af37] text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-[#d4af37]/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <PlayCircle className="w-5 h-5 inline mr-2" />
                 {pipelineState.isRunning ? "Ejecutando..." : "Ejecutar Pipeline"}
@@ -503,7 +503,7 @@ export default function WebinarCICDPage() {
                     </div>
                     <div className="w-full bg-gray-700 rounded-full h-2">
                       <div
-                        className="bg-gradient-to-r from-[#d4af37] to-yellow-500 h-2 rounded-full transition-all duration-1000"
+                        className="bg-gradient-to-r from-[#d4af37] to-[#d4af37] h-2 rounded-full transition-all duration-1000"
                         style={{ width: `${tech.adoption}%` }}
                       />
                     </div>
@@ -514,7 +514,7 @@ export default function WebinarCICDPage() {
                         ? "bg-green-500/20 text-green-400"
                         : tech.rating === "Muy Bueno"
                           ? "bg-blue-500/20 text-blue-400"
-                          : "bg-yellow-500/20 text-yellow-400"
+                          : "bg-[#d4af37]/20 text-[#d4af37]"
                     }`}
                   >
                     {tech.rating}
@@ -563,7 +563,7 @@ export default function WebinarCICDPage() {
                     </div>
                     <div className="w-full bg-gray-700 rounded-full h-2">
                       <div
-                        className="bg-gradient-to-r from-[#d4af37] to-yellow-500 h-2 rounded-full"
+                        className="bg-gradient-to-r from-[#d4af37] to-[#d4af37] h-2 rounded-full"
                         style={{ width: `${(case_.satisfaction / 5) * 100}%` }}
                       />
                     </div>
@@ -616,7 +616,7 @@ export default function WebinarCICDPage() {
             despliegue.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="px-8 py-4 bg-gradient-to-r from-[#d4af37] to-yellow-500 text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-[#d4af37]/25 transition-all duration-300 hover:scale-105">
+            <button className="px-8 py-4 bg-gradient-to-r from-[#d4af37] to-[#d4af37] text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-[#d4af37]/25 transition-all duration-300 hover:scale-105">
               <PlayCircle className="w-5 h-5 inline mr-2" />
               Solicitar Consultoría CI/CD
             </button>

@@ -205,7 +205,7 @@ export default function AnalisisDatosPage() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="group bg-gradient-to-r from-[#d4af37] to-[#d4af37] hover:from-yellow-300 hover:to-[#d4af37] text-black px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#d4af37]/25">
+            <button className="group bg-gradient-to-r from-[#d4af37] to-[#d4af37] hover:from-[#d4af37] hover:to-[#d4af37] text-black px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#d4af37]/25">
               <span className="flex items-center gap-3">
                 <Activity className="w-5 h-5 group-hover:animate-pulse" />
                 Solicita una demostración
@@ -252,7 +252,7 @@ export default function AnalisisDatosPage() {
                 <button
                   onClick={runAnalysis}
                   disabled={analysisState.isRunning}
-                  className="flex items-center gap-3 bg-gradient-to-r from-[#d4af37] to-[#d4af37] hover:from-yellow-300 hover:to-[#d4af37] disabled:from-gray-600 disabled:to-gray-700 text-black px-6 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 disabled:scale-100"
+                  className="flex items-center gap-3 bg-gradient-to-r from-[#d4af37] to-[#d4af37] hover:from-[#d4af37] hover:to-[#d4af37] disabled:from-gray-600 disabled:to-gray-700 text-black px-6 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 disabled:scale-100"
                 >
                   <Play className="w-5 h-5" />
                   {analysisState.isRunning ? "Ejecutando..." : "Ejecutar"}
@@ -593,7 +593,7 @@ export default function AnalisisDatosPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="group bg-gradient-to-r from-[#d4af37] to-[#d4af37] hover:from-yellow-300 hover:to-[#d4af37] text-black px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#d4af37]/25">
+            <button className="group bg-gradient-to-r from-[#d4af37] to-[#d4af37] hover:from-[#d4af37] hover:to-[#d4af37] text-black px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#d4af37]/25">
               <span className="flex items-center gap-3">
                 <BarChart3 className="w-5 h-5 group-hover:animate-pulse" />
                 Empezar análisis de datos

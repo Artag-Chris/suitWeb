@@ -76,7 +76,7 @@ export default function WebinarMicroserviciosPage() {
 
             <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight leading-tight">
               <span className="text-white">Migración Exitosa a </span>
-              <span className="bg-gradient-to-r from-[#d4af37] via-yellow-400 to-[#d4af37] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#d4af37] via-[#d4af37] to-[#d4af37] bg-clip-text text-transparent">
                 Microservicios
               </span>
               <br />
@@ -110,12 +110,12 @@ export default function WebinarMicroserviciosPage() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="group relative px-8 py-4 bg-gradient-to-r from-[#d4af37] to-yellow-500 text-black font-bold rounded-lg text-lg hover:shadow-2xl hover:shadow-[#d4af37]/50 transition-all duration-300 transform hover:scale-105 overflow-hidden">
+              <button className="group relative px-8 py-4 bg-gradient-to-r from-[#d4af37] to-[#d4af37] text-black font-bold rounded-lg text-lg hover:shadow-2xl hover:shadow-[#d4af37]/50 transition-all duration-300 transform hover:scale-105 overflow-hidden">
                 <span className="relative z-10 flex items-center">
                   Ver estrategias completas
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-[#d4af37] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#d4af37] to-[#d4af37] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
 
               <button className="group px-8 py-4 border-2 border-[#d4af37]/50 text-[#d4af37] font-semibold rounded-lg text-lg hover:bg-[#d4af37]/10 transition-all duration-300 flex items-center">
@@ -144,7 +144,7 @@ export default function WebinarMicroserviciosPage() {
 
             <h2 className="text-4xl md:text-5xl font-bold mb-8">
               <span className="text-white">¿Por qué </span>
-              <span className="bg-gradient-to-r from-[#d4af37] to-yellow-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#d4af37] to-[#d4af37] bg-clip-text text-transparent">
                 Microservicios?
               </span>
             </h2>
@@ -196,7 +196,7 @@ export default function WebinarMicroserviciosPage() {
 
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 <span className="text-white">Las </span>
-                <span className="bg-gradient-to-r from-[#d4af37] to-yellow-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#d4af37] to-[#d4af37] bg-clip-text text-transparent">
                   6 Estrategias
                 </span>
                 <span className="text-white"> Fundamentales</span>
@@ -268,7 +268,7 @@ export default function WebinarMicroserviciosPage() {
 
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 <span className="text-white">Transformaciones </span>
-                <span className="bg-gradient-to-r from-[#d4af37] to-yellow-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#d4af37] to-[#d4af37] bg-clip-text text-transparent">
                   Reales
                 </span>
               </h2>
@@ -392,7 +392,7 @@ export default function WebinarMicroserviciosPage() {
 
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 <span className="text-white">Stack </span>
-                <span className="bg-gradient-to-r from-[#d4af37] to-yellow-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#d4af37] to-[#d4af37] bg-clip-text text-transparent">
                   Tecnológico
                 </span>
               </h2>
@@ -420,7 +420,7 @@ export default function WebinarMicroserviciosPage() {
                     <div className="mb-4">
                       <div className="w-full bg-gray-700 rounded-full h-2">
                         <div
-                          className="bg-gradient-to-r from-[#d4af37] to-yellow-400 h-2 rounded-full transition-all duration-1000"
+                          className="bg-gradient-to-r from-[#d4af37] to-[#d4af37] h-2 rounded-full transition-all duration-1000"
                           style={{ width: `${tech.adoption}%` }}
                         ></div>
                       </div>
@@ -432,7 +432,7 @@ export default function WebinarMicroserviciosPage() {
                       className={`mt-2 inline-flex px-2 py-1 rounded-full text-xs font-medium ${tech.adoption >= 90
                           ? "bg-green-500/20 text-green-400"
                           : tech.adoption >= 80
-                            ? "bg-yellow-500/20 text-yellow-400"
+                            ? "bg-[#d4af37]/20 text-[#d4af37]"
                             : "bg-blue-500/20 text-blue-400"
                         }`}
                     >
@@ -459,7 +459,7 @@ export default function WebinarMicroserviciosPage() {
 
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 <span className="text-white">¿Listo para tu </span>
-                <span className="bg-gradient-to-r from-[#d4af37] to-yellow-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#d4af37] to-[#d4af37] bg-clip-text text-transparent">
                   migración?
                 </span>
               </h2>
@@ -472,12 +472,12 @@ export default function WebinarMicroserviciosPage() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <button className="group relative px-8 py-4 bg-gradient-to-r from-[#d4af37] to-yellow-500 text-black font-bold rounded-lg text-lg hover:shadow-2xl hover:shadow-[#d4af37]/50 transition-all duration-300 transform hover:scale-105 overflow-hidden">
+                <button className="group relative px-8 py-4 bg-gradient-to-r from-[#d4af37] to-[#d4af37] text-black font-bold rounded-lg text-lg hover:shadow-2xl hover:shadow-[#d4af37]/50 transition-all duration-300 transform hover:scale-105 overflow-hidden">
                   <span className="relative z-10 flex items-center">
                     Solicitar consultoría gratuita
                     <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                   </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-[#d4af37] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#d4af37] to-[#d4af37] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
 
                 <button className="group px-8 py-4 border-2 border-[#d4af37]/50 text-[#d4af37] font-semibold rounded-lg text-lg hover:bg-[#d4af37]/10 transition-all duration-300 flex items-center">

@@ -185,7 +185,7 @@ const MachineLearningPage = () => {
               Machine Learning para
             </span>
             <br />
-            <span className="bg-gradient-to-r from-[#d4af37] to-yellow-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#d4af37] to-[#d4af37] bg-clip-text text-transparent">
               Decisiones Inteligentes
             </span>
           </h1>
@@ -216,7 +216,7 @@ const MachineLearningPage = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-gradient-to-r from-[#d4af37] to-yellow-500 text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-[#d4af37]/25 transition-all duration-300 hover:scale-105">
+            <button className="px-8 py-4 bg-gradient-to-r from-[#d4af37] to-[#d4af37] text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-[#d4af37]/25 transition-all duration-300 hover:scale-105">
               ▶ Solicita una demostración
             </button>
             <button className="px-8 py-4 border border-[#d4af37] text-[#d4af37] rounded-lg hover:bg-[#d4af37] hover:text-black transition-all duration-300">
@@ -276,7 +276,7 @@ const MachineLearningPage = () => {
                         {phase.status === "running" && (
                           <div className="w-full bg-gray-700 rounded-full h-2 mt-2">
                             <div
-                              className="bg-gradient-to-r from-[#d4af37] to-yellow-500 h-2 rounded-full animate-pulse"
+                              className="bg-gradient-to-r from-[#d4af37] to-[#d4af37] h-2 rounded-full animate-pulse"
                               style={{ width: "60%" }}
                             ></div>
                           </div>
@@ -315,7 +315,7 @@ const MachineLearningPage = () => {
               <button
                 onClick={runTraining}
                 disabled={trainingState.isRunning}
-                className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#d4af37] to-yellow-500 text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-[#d4af37]/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#d4af37] to-[#d4af37] text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-[#d4af37]/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <Play className="w-4 h-4" />
                 {trainingState.isRunning ? "Entrenando..." : "Ejecutar Entrenamiento"}
@@ -357,7 +357,7 @@ const MachineLearningPage = () => {
                           onClick={() => setModelConfig((prev) => ({ ...prev, dataSize: size }))}
                           className={`py-2 px-4 rounded-lg font-medium transition-all duration-300 ${
                             modelConfig.dataSize === size
-                              ? "bg-gradient-to-r from-[#d4af37] to-yellow-500 text-black"
+                              ? "bg-gradient-to-r from-[#d4af37] to-[#d4af37] text-black"
                               : "bg-black/40 text-gray-300 hover:bg-black/60 border border-[#d4af37]/20"
                           }`}
                         >
@@ -382,7 +382,7 @@ const MachineLearningPage = () => {
                           onClick={() => setModelConfig((prev) => ({ ...prev, modelType: type.key }))}
                           className={`py-2 px-4 rounded-lg font-medium transition-all duration-300 ${
                             modelConfig.modelType === type.key
-                              ? "bg-gradient-to-r from-[#d4af37] to-yellow-500 text-black"
+                              ? "bg-gradient-to-r from-[#d4af37] to-[#d4af37] text-black"
                               : "bg-black/40 text-gray-300 hover:bg-black/60 border border-[#d4af37]/20"
                           }`}
                         >
@@ -509,7 +509,7 @@ const MachineLearningPage = () => {
                           ? "bg-green-500/20 text-green-400"
                           : tech.rating === "Muy Bueno"
                             ? "bg-blue-500/20 text-blue-400"
-                            : "bg-yellow-500/20 text-yellow-400"
+                            : "bg-[#d4af37]/20 text-yellow-400"
                       }`}
                     >
                       {tech.rating}
@@ -522,7 +522,7 @@ const MachineLearningPage = () => {
                     </div>
                     <div className="w-full bg-gray-700 rounded-full h-2">
                       <div
-                        className="bg-gradient-to-r from-[#d4af37] to-yellow-500 h-2 rounded-full transition-all duration-500"
+                        className="bg-gradient-to-r from-[#d4af37] to-[#d4af37] h-2 rounded-full transition-all duration-500"
                         style={{ width: `${tech.adoption}%` }}
                       ></div>
                     </div>
@@ -629,7 +629,7 @@ const MachineLearningPage = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-gradient-to-r from-[#d4af37] to-yellow-500 text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-[#d4af37]/25 transition-all duration-300 hover:scale-105">
+            <button className="px-8 py-4 bg-gradient-to-r from-[#d4af37] to-[#d4af37] text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-[#d4af37]/25 transition-all duration-300 hover:scale-105">
               Aplicar ML en mi empresa
             </button>
             <button className="px-8 py-4 border border-[#d4af37] text-[#d4af37] rounded-lg hover:bg-[#d4af37] hover:text-black transition-all duration-300">
