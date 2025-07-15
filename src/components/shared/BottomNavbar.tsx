@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react"
 import { DropdownMenu } from "../microComponents/DropdownMenu"
 import { Button } from "../ui/button"
 import type { BottomNavbarProps, Connection, Particle } from "@/interfaces"
-import { RocketLaunchIcon } from "@heroicons/react/16/solid"
+import { RocketLaunchIcon } from "@heroicons/react/16/solid" 
 import {
   LinkIcon,
   UserCircleIcon,
