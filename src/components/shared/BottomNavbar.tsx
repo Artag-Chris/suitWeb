@@ -8,7 +8,7 @@ import type { BottomNavbarProps, Connection, Particle } from "@/interfaces"
 import { RocketLaunchIcon } from "@heroicons/react/16/solid" 
 import {
   LinkIcon,
-  UserCircleIcon,
+  UserCircleIcon, 
   ServerIcon,
   BarChartIcon as ChartBarIcon,
   TrendingUpIcon,
