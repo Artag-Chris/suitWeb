@@ -9,7 +9,7 @@ import { RocketLaunchIcon } from "@heroicons/react/16/solid"
 import {
   LinkIcon,
   UserCircleIcon, 
-  ServerIcon,
+  ServerIcon, 
   BarChartIcon as ChartBarIcon,
   TrendingUpIcon,
   BarChart2,
