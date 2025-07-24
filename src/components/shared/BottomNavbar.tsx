@@ -13,7 +13,7 @@ import {
   BarChartIcon as ChartBarIcon,
   TrendingUpIcon,
   BarChart2,
-  Cloud,
+  Cloud, 
   Cpu,
   MoveDiagonal,
   PieChart,
